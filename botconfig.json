@@ -1,1 +1,4 @@
-
+{
+ "token": process.env.token,
+  "prefix": "test."
+}
