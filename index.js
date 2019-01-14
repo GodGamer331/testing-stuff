@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 const botconfig = require("./botconfig.json");
 //const colours = require("./colours.json");
 //const superagent = require("superagent")
+const ms = require("ms")
 
 const bot = new Discord.Client({disableEveryone: true});
 
@@ -28,9 +29,9 @@ fs.readdir("./commands/", (err, files) => {
 
     jsfile.forEach((f, i) => {
         let pull = require(`./commands/${f}`);
-        bot.commands.set(pull.config, pull);  
+        bot.commands.set(pull.config.name, pull);  
         pull.config.aliases.forEach(alias => {
-            bot.aliases.set(alias, pull.config)
+            bot.aliases.set(alias, pull.config.name)
         });
     });
 });
