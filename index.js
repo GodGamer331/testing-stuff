@@ -7,6 +7,10 @@ const bot = new Discord.Client({disableEveryone: true});
 
 //require("./util/eventHandler")(bot)
 
+bot.on("ready", async () => {
+  console.log("Ready!")
+});
+
 const fs = require("fs");
 bot.commands = new Discord.Collection();
 bot.aliases = new Discord.Collection();
