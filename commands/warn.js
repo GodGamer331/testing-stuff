@@ -42,3 +42,4 @@ module.exports.help = {
   aliases: []
 }
 
+//WAA TAA FAAAK
