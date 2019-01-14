@@ -1,4 +1,4 @@
-const config = require("../botconfig.json");
+const Botconfig = require("../botconfig.json");
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
@@ -11,6 +11,6 @@ module.exports.run = async (bot, message, args) => {
 }
 
 module.export.config = {
-  name: "help",
-  aliases: ["helo", "hrlp"]
+    name: "help",
+    aliases: []
 }
