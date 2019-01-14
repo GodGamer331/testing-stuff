@@ -14,9 +14,9 @@ modules.exports.run = async (bot, message, args) => {
   try{
     aMember.send("You now have role: " + `${gRole.name}`);
   }catch(e){
-  message.channel.send(`User have now ${gRole.name}. I tried to DM him/her but his/her DM's are locked.`);
+  await message.channel.send(`User have now ${gRole.name}. I tried to DM him/her but his/her DM's are locked.`);
+  }
 }
-
 
 module.exports.help = {
   name: "addrole",
