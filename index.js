@@ -31,4 +31,16 @@ fs.readdir("/commands/", (err, files) => {
    });
 });
 
+bot.on("message", async message => {
+  if (message.author.bot) return;
+  if (message.channel.type === "dm") return;
+  
+  let prefix = config.prefix;
+  let messageArray = message.content.split(" ");
+  let cmd = messageArray[0];
+  let args = messageArray.slice(1);
+  let commandfile = bot.commands.get(cmd.slice(prefix.lenght)) || bot.commands.get(bot.aliases.get(cmd.slice(prefix.lenght()))
+  if(commandfile) commandfile.run(bot,message,args)
+})
+
 bot.login(process.env.token);
