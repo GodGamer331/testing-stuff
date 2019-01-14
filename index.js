@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const botconfig = require("./botconfig.json");
 //const colours = require("./colours.json");
 //const superagent = require("superagent")
-const ms = require("ms")
+//const ms = require("ms")
 
 const bot = new Discord.Client({disableEveryone: true});
 
