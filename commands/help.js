@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) => {
    .setAuthor("Help Message", message.author.avatarURL)
    .setColor("GREEN")
    .setTimestamp()
-   .addBlankField("Test")
+   .setDescription("test.help \n Shows this command!")
    message.channel.send(embed)
 }
 
