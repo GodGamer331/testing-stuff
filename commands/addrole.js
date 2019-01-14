@@ -1,6 +1,6 @@
 const discord = require("discord.js");
 
-modules.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message, args) => {
   if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.reply("You dont have enought permissions!");
   let aMember = message.guild.member(message.mentions.user.first()) || message.guild.get(args[0]);
   if(!aMember) return message.reply("Specify a Member!");
