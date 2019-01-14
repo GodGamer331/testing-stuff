@@ -8,6 +8,7 @@ module.exports.run = async (bot, message, args) => {
    .addField("Warned:", message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]))
    .addField("Moderator:", message.author.username)
    .setThumbnail(message.author.avatarURL)
+   .setColor("RED")
    .addField("Reason:", args.join(" ").slice(22));
    let warnC = message.guild.channels.find(`name`, "logs");
    warnC.send(embed)
