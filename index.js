@@ -9,6 +9,8 @@ const bot = new Discord.Client({disableEveryone: true});
 
 bot.on("ready", async () => {
   console.log("Ready!")
+  
+  bot.user.setActivity("All codes in commands.", {type: "STREAMING"});
 });
 
 const fs = require("fs");
