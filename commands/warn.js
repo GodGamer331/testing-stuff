@@ -20,7 +20,7 @@ module.exports.run = async (bot, message, args) => {
 
   fs.writeFile("./warnings.json", JSON.stringify(warns), (err) => {
     if (err) console.log(err)
-  });
+  };
 
   let warnEmbed = new Discord.RichEmbed()
   .setDescription("**__Warns__**")
