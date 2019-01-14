@@ -36,7 +36,7 @@ fs.readdir("./commands/", (err, files) => {
     });
 });
 
-
+//wutf D:
 
 bot.on("message", async message => {
     if(message.author.bot || message.channel.type === "dm") return;
