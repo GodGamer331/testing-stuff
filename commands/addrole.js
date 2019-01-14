@@ -1,4 +1,4 @@
-const discord = require("diecord.js");
+const discord = require("discord.js");
 
 modules.exports.run = async (bot, message, args) => {
   if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.reply("You dont have enought permissions!");
