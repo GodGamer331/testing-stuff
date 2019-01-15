@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const botconfig = require("./botconfig.json");
+const fs = require("fs");
 //const colours = require("./colours.json");
 //const superagent = require("superagent")
 //const ms = require("ms")
