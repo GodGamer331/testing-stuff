@@ -14,7 +14,7 @@ module.exports.run = async (bot, message, args) => {
    warnC.send(embed)
 }
 
-module.exports.config = {
+module.exports.help = {
     name: "warn",
     aliases: []
 }
