@@ -1,4 +1,4 @@
-const discord = require("discord.js")
+const Discord = require("discord.js")
 
 module.exports.run = async (bot, message, args) => {
   var embed = new Discord.RichEmbed()
