@@ -8,7 +8,8 @@ module.exports.run = async (bot, message, args) => {
    .setColor("GREEN")
    .setTimestamp()
    .addField("test.warn", "Warns a user.")
-   .setDescription("test.help \n Shows this command!")
+   .addField("test.ping", "Shows Bots ping. [test](https://www.roblox.com/Groups/Group.aspx?gid=4486243)")
+   .setDescription("test.help \n Shows this command!");
    message.channel.send(embed)
 }
 
