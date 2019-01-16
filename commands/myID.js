@@ -6,6 +6,7 @@ module.exports.run = async (bot, message, args) => {
    var embed = new Discord.RichEmbed()
    .setThumbnail(message.author.avatarURL)
    .setDescription(`Your ID is ${message.author.id}`)
+   .setColor("RANDOM")
    .setAuthor(message.author.username);
    message.channel.send(embed)
 }
