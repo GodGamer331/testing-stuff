@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
    
    var embed = new Discord.RichEmbed()
    .setAuthor(message.author.username)
-   .setDescription("Your Question was: " + Q + "\n My answer is " + answ);
+   .setDescription("Your Question was: " + Q + "\n My answer is " + replies[answ]);
   
    message.channel.send(embed)
 }
