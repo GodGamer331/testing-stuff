@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
    .setAuthor(message.author.username)
    .setDescription(`Your Question was: ${Q}`)
    .setImage(answ);
-   message.send(embed)
+   message.channel.send(embed)
 }
 
 module.exports.help = {
