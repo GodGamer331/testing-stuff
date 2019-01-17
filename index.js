@@ -33,11 +33,8 @@ fs.readdir("./commands/", (err, files) => {
     console.log(`${f} loaded!`);
     bot.commands.set(props.help.name, props);
   });
-    let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
-    if(!prefixes[message.guild.id]){
-      prefixes[message.guild.id] = {
-        prefixes: botconfig.prefix
-}};
+    
+
 
 
 
@@ -49,6 +46,12 @@ bot.on("message", async message => {
     let messageArray = message.content.split(" ")
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
+    let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
+    if(!prefixes[message.guild.id]){
+      prefixes[message.guild.id] = {
+        prefixes: botconfig.prefix
+        }
+      }
 
 
     if(!message.content.startsWith(prefix)) return;
