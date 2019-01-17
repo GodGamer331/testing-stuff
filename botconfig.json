@@ -1,4 +1,4 @@
 {
   "token": "process.env.token",
-  "prefix": "./commands/prefixes"
+  "prefix": "Test."
 }
