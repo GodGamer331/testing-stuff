@@ -33,6 +33,7 @@ fs.readdir("./commands/", (err, files) => {
     console.log(`${f} loaded!`);
     bot.commands.set(props.help.name, props);
   });
+});
     
 
 
@@ -50,7 +51,7 @@ bot.on("message", async message => {
     if(!prefixes[message.guild.id]){
       prefixes[message.guild.id] = {
         prefixes: botconfig.prefix
-      };
+      }
     }
 
 
