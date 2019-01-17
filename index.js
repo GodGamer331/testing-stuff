@@ -43,7 +43,7 @@ fs.readdir("./commands/", (err, files) => {
 bot.on("message", async message => {
     if(message.author.bot || message.channel.type === "dm") return;
 
-    //let prefix = botconfig.prefix;
+    let prefix = prefixes[message.guild.id].prefixes;
     let messageArray = message.content.split(" ")
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
@@ -54,7 +54,7 @@ bot.on("message", async message => {
         prefixes: botconfig.prefix
       }
     }
-    let prefix = prefixes[message.guild.id].prefixes;
+    //let prefix = prefixes[message.guild.id].prefixes;
 
     if(!message.content.startsWith(prefixes)) return;
     let commandfile = bot.commands.get(cmd.slice(prefixes.length)) || bot.commands.get(bot.aliases.get(cmd.slice(prefixes.length)))
