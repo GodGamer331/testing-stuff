@@ -53,7 +53,7 @@ bot.on("message", async message => {
         prefixes: botconfig.prefix
       }
     }
-
+    let prefix = prefixes[message.guild.id].prefixes;
 
     if(!message.content.startsWith(prefixes)) return;
     let commandfile = bot.commands.get(cmd.slice(prefixes.length)) || bot.commands.get(bot.aliases.get(cmd.slice(prefixes.length)))
