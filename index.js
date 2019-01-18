@@ -6,7 +6,9 @@ bot.commands = new Discord.Collection();
 
 //const colours = require("./colours.json");
 //const superagent = require("superagent")
-//const ms = require("ms")
+
+
+const ms = require("ms")
 
 
 //const bot = new Discord.Client({disableEveryone: true});
