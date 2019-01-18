@@ -1,6 +1,6 @@
 const Botconfig = require("../botconfig.json");
 const Discord = require("discord.js");
-//const ms = require("ms")
+const ms = require("ms")
 
 module.exports.run = async (bot, message, args) => {
    let replies = ["Yes", "No", "Probably Yes", "Probably No", "Maybe", "Ask another one.", "Try asking later."]
