@@ -44,17 +44,17 @@ bot.on("message", async message => {
   let commandfile = bot.commands.get(cmd.slice(prefix.length));
   if(commandfile) commandfile.run(bot,message,args);
   
-  if(message.content === `${prefix}update`);
-  var embed = new Discord.RichEmbed()
-  .setAuthor("New Update!")
-  .addField("Changed prefix to:", "!=")
-  .addField("Added avatar command", "Use: !=avatar (player)")
-  .setColor("GREEN")
-  .setFooter("v1.6.1 | Made by {^=^}DEVELOPER{^=^}")
-  .setTimestamp();
+ // if(message.content === `${prefix}update`);
+ // var embed = new Discord.RichEmbed()
+  //.setAuthor("New Update!")
+//.addField("Changed prefix to:", "!=")
+ // .addField("Added avatar command", "Use: !=avatar (player)")
+ // .setColor("GREEN")
+//.setFooter("v1.6.1 | Made by {^=^}DEVELOPER{^=^}")
+ // .setTimestamp();
   //let tchannel = message.guild.channels.find(`name`, "bot-updates");
-  message.channel.send(embed)
-  return;
+ //message.channel.send(embed)
+//  return;
   
 
  //WUTF IS DAT THING
