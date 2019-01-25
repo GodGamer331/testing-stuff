@@ -3,9 +3,11 @@ const Discord = require("discord.js");
 //const ms = require("ms")
 
 module.exports.run = async (bot, message, args) => {
+   //
    let staff = message.member.roles.find("name", "Moderator") || message.member.roles.find("name", "Administrator") || message.member.roles.find("name", "Co-Owner") || message.member.roles.find("name", "Owner");
    if(!staff) return message.reply("You are not a Staff Member!");
    
+   var embed = new Discord.RichEmbed()
    .setAuthor("Warn Announce")
    .setColor("RED")
    .setTimestamp()
