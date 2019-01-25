@@ -5,7 +5,7 @@ const PREFIX = config.prefix;
 let xp = require("./xp.json");
 let cooldown = new Set();
 let cdseconds = 5;
-const moment = require('moment');
+//const moment = require('moment');
 
 bot.on("ready", function() {
   console.log(
