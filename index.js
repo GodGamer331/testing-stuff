@@ -46,5 +46,5 @@ bot.on("message", async message => {
 
 
  //WUTF IS DAT THING
-
+});
 bot.login(process.env.token);
