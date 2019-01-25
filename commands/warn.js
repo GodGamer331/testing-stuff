@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
    if(!staff) return message.reply("You are not a Staff Member!");
    let reason = args.join(" ").slice(22);
    if(!reason) return message.reply("Please specify a reason!");
-   let wUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]));
+   let wUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
    if(!wUser) return message.reply("Specify A User!");
   
    var embed = new Discord.RichEmbed()
