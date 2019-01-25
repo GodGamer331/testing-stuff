@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const PREFIX = "god."
+const PREFIX = "#"
 
 // This is the brackets in which the command goes in
 module.exports.run = async (bot, message, args) => {
@@ -15,30 +15,36 @@ module.exports.run = async (bot, message, args) => {
                     },
                   fields: [
                     {
-                        name: "god.avatar",
-                        value: "Usage: >avatar | >avatar <@mention>",
+                        name: "Prefix:",
+                        value: "#",
                     },
                     {
-                        name: "god.my-id",
+                        name: "#avatar",
+                        value: "Usage: #avatar | #avatar <@mention>",
+                    },
+                    
+                    
+                    {
+                        name: "#my-id",
                         value: "Will grab your ID.",
                     },
                     {
-                        name: "god.8ball",
+                        name: "#8ball",
                         value: "Usage: god.8ball <Question>",
                     },
                     {
-                        name: "god.ping",
+                        name: "#ping",
                         value: "Will show you StrandBOT's current ping.",
                     },
               ],
                   timestamp: new Date(),
                   footer: {
                     icon_url: bot.user.displayAvatarURL ,
-                    text: "© StrandBot",
+                    text: "GodBot™ | Made by JustNela#8752",
                   },
                   author: {
                       icon_url: message.guild.iconURL,
-                      name: "GodBot | Did you knew that owner is a Female gender?",
+                      name: "GodBot | help and fun!",
                     }
               }})};
             return;
