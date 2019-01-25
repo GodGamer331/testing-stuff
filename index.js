@@ -45,6 +45,6 @@ bot.on("message", async message => {
   if(commandfile) commandfile.run(bot,message,args);
 
 
- 
+ //WUTF IS DAT THING
 
 bot.login(process.env.token);
