@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
   .addField("Ping!", ":ping_pong: **Pong!**");
   message.channel.send(embed)
 }
-
+//lol
 module.exports.help = {
   name: "ping",
   aliases: []
