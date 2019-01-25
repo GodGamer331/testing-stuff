@@ -15,7 +15,12 @@ module.exports.run = async (bot, message, args) => {
    message.channel.send(embed)
 }
 
+module.exports.conf = {
+    aliases: ['eight-ball', 'eightball', '8-ball', '8 ball', 'eight ball', 'magic ball']
+};
+
+// ADD DESCRIPTION AND SUCH
 module.exports.help = {
-    name: "8ball",
-    aliases: []
-}
+    name: "8ball"
+
+} 
