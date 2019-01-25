@@ -44,13 +44,14 @@ fs.readdir("./commands/", (err, files) => {
 
 bot.on("message", async message => {
     if(message.author.bot || message.channel.type === "dm") return;
-
+    
+    let prefix = botconfig.prefix
     //let prefix = prefixes[message.guild.id].prefixes;
     let messageArray = message.content.split(" ")
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
-    let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
-    let prefix = prefixes[message.guild.id].prefixes;
+   // let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
+   // let prefix = prefixes[message.guild.id].prefixes;
     if(!prefixes[message.guild.id]){
       console.log(prefix)
       prefixes[message.guild.id] = {
