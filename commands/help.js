@@ -38,9 +38,9 @@ module.exports.run = async (bot, message, args) => {
                   },
                   author: {
                       icon_url: message.guild.iconURL,
-                      name: "GodBot",
+                      name: "GodBot | Did you knew that owner is a Female gender?",
                     }
-              }});
+              }}});
             return;
 
 module.exports.help = {
