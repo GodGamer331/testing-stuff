@@ -8,7 +8,7 @@ bot.commands = new Discord.Collection();
 //const superagent = require("superagent")
 
 
-const ms = require("ms")
+
 
 
 //const bot = new Discord.Client({disableEveryone: true});
