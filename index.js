@@ -54,6 +54,7 @@ bot.on("message", async message => {
   .setTimestamp();
   let tchannel = message.guild.channels.find(`name`, "bot-updates");
   tchannel.send(embed)
+  return;
   
 
  //WUTF IS DAT THING
