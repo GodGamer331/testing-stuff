@@ -40,10 +40,17 @@ module.exports.run = async (bot, message, args) => {
                       icon_url: message.guild.iconURL,
                       name: "GodBot | Did you knew that owner is a Female gender?",
                     }
-              }}});
+              }});
             return;
+}
 
+module.exports.conf = {
+    aliases: ['h', 'halp']
+};
+
+
+// ADD DESCRIPTION AND SUCH
 module.exports.help = {
-    name: "help",
-    aliases: []
+    name: "help"
+
 }
