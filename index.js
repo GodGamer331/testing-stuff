@@ -44,7 +44,7 @@ bot.on("message", async message => {
   let commandfile = bot.commands.get(cmd.slice(prefix.length));
   if(commandfile) commandfile.run(bot,message,args);
   
-  if(message.content === "!=update");
+  if(message.content === `${prefix}update`);
   var embed = new Discord.RichEmbed()
   .setAuthor("New Update!")
   .addField("Changed prefix to:", "!=")
