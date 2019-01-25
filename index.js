@@ -48,7 +48,7 @@ bot.on("message", async message => {
   var embed = new Discord.RichEmbed()
   .setAuthor("New Update!")
   .addField("Bot have now update logs!", "You can see it now :)")
-  .setColor("Green")
+  .setColor("GREEN")
   .setFooter("v1.6 | Made by {^=^}DEVELOPER{^=^}")
   .setTimestamp();
   let tchannel = message.guild.channels.find(`name`, "bot-updates");
