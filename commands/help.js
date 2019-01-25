@@ -1,11 +1,11 @@
 const Discord = require("discord.js");
-const PREFIX = ">"
+const PREFIX = "god."
 
 // This is the brackets in which the command goes in
 module.exports.run = async (bot, message, args) => {
     if (!message.content.startsWith(PREFIX)) return;
       message.delete(1)
-
+//why I cant make this help to work???????????????? IDK CUZ ITS RETARDET!!!
       if(args[0] == "1"){
         message.reply("please check your dms for the commands!");
             message.author.send({embed: {
