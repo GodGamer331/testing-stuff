@@ -32,7 +32,7 @@ module.exports.run = async (bot, message, args) => {
 
         msg.delete();
 }
-module.exports.config = {
+module.exports.help = {
     name: "avatar",
     description: "Displays avatar."
 	
