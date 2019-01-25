@@ -52,8 +52,8 @@ bot.on("message", async message => {
   .setColor("GREEN")
   .setFooter("v1.6.1 | Made by {^=^}DEVELOPER{^=^}")
   .setTimestamp();
-  let tchannel = message.guild.channels.find(`name`, "bot-updates");
-  tchannel.send(embed)
+  //let tchannel = message.guild.channels.find(`name`, "bot-updates");
+  message.channel.send(embed)
   return;
   
 
