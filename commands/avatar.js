@@ -35,5 +35,5 @@ module.exports.run = async (bot, message, args) => {
 module.exports.config = {
     name: "avatar",
     description: "Displays avatar."
-	aliases: ['av', 'avi']
+	
 }
