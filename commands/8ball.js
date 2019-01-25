@@ -1,18 +1,27 @@
-const Botconfig = require("../botconfig.json");
 const Discord = require("discord.js");
+const PREFIX = "god."
 
+var fortunes = [
+    "Yes",
+    "No",
+    "Maybe",
+    "Definetly Not",
+    "It's Possible",
+    "Depends",
+    "Not a chance",
+];
 
+// This is the brackets in which the command goes in
 module.exports.run = async (bot, message, args) => {
-   let replies = ["Yes", "No", "Probably Yes", "Probably No", "Maybe", "Ask another one.", "Try asking later."]
-   if(!args[2]) return message.reply("Ask a question that have 2 words!")
-   let answ = Math.floor((Math.random() * replies.lenght) + 0)
-   let Q = args.slice(0).join(" ");
-   
-   var embed = new Discord.RichEmbed()
-   .setAuthor(message.author.username)
-   .setDescription("Your Question was: " + Q + "\n My answer is " + replies[answ]);
-  
-   message.channel.send(embed)
+    if(!message.content.startsWith(PREFIX)) return;
+
+    if(args[0] == "help"){
+        message.reply("Usage: >8ball <question>");
+        return;
+    };
+
+            if (args[1]) message.channel.send(fortunes[Math.floor(Math.random() * fortunes.length)]);
+            else message.channel.send("Sorry, Please ask another question.");
 }
 
 module.exports.conf = {
