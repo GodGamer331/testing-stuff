@@ -36,8 +36,8 @@ fs.readdir("./commands/", (err, files) => {
     bot.commands.set(props.help.name, props);
     props.config.aliases.forEach(alias => {
             bot.aliases.set(alias, props.config.name);
-      };
-  });
+      
+  }});
 });
     
 
