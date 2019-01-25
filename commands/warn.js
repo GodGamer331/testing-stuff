@@ -1,6 +1,6 @@
 
 const Discord = require("discord.js");
-const PREFIX = ">"
+const PREFIX = "god."
 
 // This is the brackets in which the command goes in
 module.exports.run = async (bot, message, args) => {
