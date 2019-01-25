@@ -1,18 +1,47 @@
-const Botconfig = require("../botconfig.json");
 const Discord = require("discord.js");
-//const ms = require("ms")
+const PREFIX = ">"
 
+// This is the brackets in which the command goes in
 module.exports.run = async (bot, message, args) => {
-   let embed = new Discord.RichEmbed()
-   .setAuthor("Help Message", message.author.avatarURL)
-   .setColor("GREEN")
-   .setTimestamp()
-   .addField("test.warn", "Warns a user.")
-   .addField("test.my-id", "Shows your ID")
-   .addField("test.ping", "Shows Bots ping. [test](https://www.roblox.com/Groups/Group.aspx?gid=4486243)")
-   .setDescription("test.help \n Shows this command!");
-   message.channel.send(embed)
-}
+    if (!message.content.startsWith(PREFIX)) return;
+      message.delete(1)
+
+      if(args[0] == "1"){
+        message.reply("please check your dms for the commands!");
+            message.author.send({embed: {
+                  color: 2221974,
+                  thumbnail: {
+                      url: (message.author.displayAvatarURL)
+                    },
+                  fields: [
+                    {
+                        name: ">avatar",
+                        value: "Usage: >avatar | >avatar <@mention>",
+                    },
+                    {
+                        name: "god.my-id",
+                        value: "Will grab your ID.",
+                    },
+                    {
+                        name: "god.8ball",
+                        value: "Usage: god.8ball <Question>",
+                    },
+                    {
+                        name: ">ping",
+                        value: "Will show you StrandBOT's current ping.",
+                    },
+              ],
+                  timestamp: new Date(),
+                  footer: {
+                    icon_url: bot.user.displayAvatarURL ,
+                    text: "© StrandBot",
+                  },
+                  author: {
+                      icon_url: message.guild.iconURL,
+                      name: "GodBot",
+                    }
+              }});
+            return;
 
 module.exports.help = {
     name: "help",
