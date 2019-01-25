@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const PREFIX = "#"
+const PREFIX = "!="
 
 // This is the brackets in which the command goes in
 module.exports.run = async (bot, message, args) => {
@@ -16,25 +16,25 @@ module.exports.run = async (bot, message, args) => {
                   fields: [
                     {
                         name: "Prefix:",
-                        value: "#",
+                        value: "!=",
                     },
                     {
-                        name: "#avatar",
+                        name: "!=avatar",
                         value: "Usage: #avatar | #avatar <@mention>",
                     },
                     
                     
                     {
-                        name: "#my-id",
+                        name: "!=my-id",
                         value: "Will grab your ID.",
                     },
                     {
-                        name: "#8ball",
+                        name: "!=8ball",
                         value: "Usage: god.8ball <Question>",
                     },
                     {
-                        name: "#ping",
-                        value: "Will show you StrandBOT's current ping.",
+                        name: "!=ping",
+                        value: "Will show you God Bot's current ping.",
                     },
               ],
                   timestamp: new Date(),
