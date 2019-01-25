@@ -15,7 +15,7 @@ module.exports.run = async (bot, message, args) => {
                     },
                   fields: [
                     {
-                        name: ">avatar",
+                        name: "god.avatar",
                         value: "Usage: >avatar | >avatar <@mention>",
                     },
                     {
@@ -27,7 +27,7 @@ module.exports.run = async (bot, message, args) => {
                         value: "Usage: god.8ball <Question>",
                     },
                     {
-                        name: ">ping",
+                        name: "god.ping",
                         value: "Will show you StrandBOT's current ping.",
                     },
               ],
@@ -40,7 +40,7 @@ module.exports.run = async (bot, message, args) => {
                       icon_url: message.guild.iconURL,
                       name: "GodBot | Did you knew that owner is a Female gender?",
                     }
-              }});
+              }})};
             return;
 }
 
