@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-const config = require("./config.json");
+const config = require("./botconfig.json");
 const PREFIX = config.prefix;
 let xp = require("./xp.json");
 let cooldown = new Set();
