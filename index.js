@@ -105,7 +105,7 @@ fs.readdir("./commands/", (err, files) => {
 
 
 bot.on("ready", () => {
-    bot.user.setPresence({ game: { name: "All commands, type: 3 } });
+    bot.user.setPresence({ game: { name: "All commands", type: 3 } });
 })
 
 bot.on("message", async message => {
