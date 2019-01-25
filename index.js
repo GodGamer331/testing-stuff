@@ -2,8 +2,8 @@ const Discord = require("discord.js");
 const botconfig = require("./botconfig.json");
 const fs = require("fs");
 const bot = new Discord.Client({disableEveryone: true});
-bot.commands = new Discord.Collection();
-bot.aliases = new Discord.Collection();
+//bot.commands = new Discord.Collection();
+//bot.aliases = new Discord.Collection();
 //const colours = require("./colours.json");
 //const superagent = require("superagent")
 
@@ -20,25 +20,31 @@ bot.on("ready", async () => {
   
   bot.user.setActivity("All codes in commands.", {type: "STREAMING"});
 });
+//COMMAND HANDLER
+const fs = require("fs");
+bot.commands = new Discord.Collection();
+bot.aliases = new Discord.Collection();
 
 fs.readdir("./commands/", (err, files) => {
-
-  if(err) console.log(err);
-  let jsfile = files.filter(f => f.split(".").pop() === "js");
-  if(jsfile.length <= 0){
-    console.log("Couldn't find commands.");
-    return;
-  }
-
-  jsfile.forEach((f, i) =>{
-    let props = require(`./commands/${f}`);
-    console.log(`${f} loaded!`);
-    bot.commands.set(props.help.name, props);
-    props.botconfig.aliases.forEach(alias => {
-            bot.aliases.set(alias, props.botconfig.name);
+    
+      if(err) console.log(err);
+    
+      let jsfile = files.filter(f => f.split(".").pop() === "js")
+      if(jsfile.length <= 0){
+        console.log("[StrandBot Log] Couldn't find commands.");
+        return;
+      }
+    
+      jsfile.forEach((f, i) => {
+        let pull = require(`./commands/${f}`);
+        bot.commands.set(pull.config.name, pull);
+        pull.config.aliases.forEach(alias => {
+            bot.aliases.set(alias, pull.config.name);
+        });
+        
       });
-  });
-});
+     // console.log(`[StrandBot Log] 47 / 47 commands successfully loaded!`);
+    });
     
 
 
