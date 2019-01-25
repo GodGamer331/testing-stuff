@@ -26,7 +26,15 @@ fs.readdir("./commands/", (err, files) => {
 
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
-
+  var embed = new Discord.RichEmbed()
+  .setAuthor("New Update!")
+  .addField("Bot have now update logs!", "You can see it now :)")
+  .setColor("Green")
+  .setFooter("v1.6 | Made by {^=^}DEVELOPER{^=^}")
+  .setTimestamp();
+  let tchannel = message.guild.channels.find(`name`, "bot-updates");
+  tchannel.send(embed)
+  
   bot.user.setActivity("My patreons ;)", {type: "STREAMING"});
 
   //bot.user.setGame("on SourceCade!");
