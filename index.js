@@ -52,7 +52,7 @@ bot.on("message", async message => {
     let args = messageArray.slice(1);
    // let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
    // let prefix = prefixes[message.guild.id].prefixes;
-    if(!prefixes[message.guild.id]){
+    //if(!prefixes[message.guild.id]){
      // console.log(prefix)
       //prefixes[message.guild.id] = {
         //prefixes: botconfig.prefix
