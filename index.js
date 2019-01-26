@@ -62,4 +62,4 @@ bot.on("message", async message => {
  //WUTF IS DAT THING
 });
 bot.login(process.env.token);
-//No one is reading this..
+//No one is reading this.. if so then Hi.
