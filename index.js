@@ -34,7 +34,7 @@ bot.on("ready", async () => {
     let statuses = [
     
       
-      `${bot.guild.size}`,
+      `in ${bot.guilds.size} servers`,
       "my prefix is !=",
       "!=help 1 for start!",
       `over ${bot.users.size} users!`,
