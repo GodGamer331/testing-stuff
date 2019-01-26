@@ -94,7 +94,7 @@ module.exports.run = async (bot, message, args) => {
                     }
               }})};
            return;
-    }
+};
                
                 
                  
@@ -104,9 +104,9 @@ module.exports.run = async (bot, message, args) => {
             
 
 
-module.exports.conf = {
-    aliases: ['h', 'halp']
-};
+//module.exports.conf = {
+  //aliases: ['h', 'halp']
+//};
 
 
 // ADD DESCRIPTION AND SUCH
