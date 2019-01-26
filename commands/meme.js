@@ -1,5 +1,6 @@
 const Discord = require("discord.js")
 const PREFIX = "!="
+const superagent = require('superagent');
 
 module.exports.run = async (bot, message, args) => {
     if (!message.content.startsWith(PREFIX)) return;
