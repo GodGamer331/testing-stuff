@@ -43,7 +43,7 @@ bot.on("ready", async () => {
   setInterval(function() {
     let status = statuses[Math.floor(Math.random() * statuses.lenght)];
     bot.user.setActivity(status, {type: "LISTENING"});
-    bot.user.setStatus("dnd");
+    bot.user.setStatus("dnd"); //online, idle, dnd, invisible
   }, 5000)
   //bot.user.setGame("on SourceCade!");
 });
