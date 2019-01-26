@@ -1,4 +1,5 @@
 const Discord = require("discord.js")
+const PREFIX = "!="
 
 module.exports.run = async (bot, message, args) => {
     if (!message.content.startsWith(PREFIX)) return;
