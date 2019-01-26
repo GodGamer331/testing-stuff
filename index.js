@@ -3,10 +3,12 @@ const botconfig = require("./botconfig.json");
 const Discord = require("discord.js");
 const fs = require("fs");
 //const superagent = require("superagent")
-require("./util/eventHandler")(bot)
+
 
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
+
+require("./util/eventHandler")(bot)
 
 fs.readdir("./commands/", (err, files) => {
 
