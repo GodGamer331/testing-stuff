@@ -3,6 +3,7 @@ const botconfig = require("./botconfig.json");
 const Discord = require("discord.js");
 const fs = require("fs");
 //const superagent = require("superagent")
+require("./util/eventHandler")(bot)
 
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
@@ -26,27 +27,6 @@ fs.readdir("./commands/", (err, files) => {
 });
 
 
-bot.on("ready", async () => {
-  console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
- 
-  
-    
-    let statuses = [
-    
-      
-      `in ${bot.guilds.size} servers`,
-      "my prefix is !=",
-      "!=help 1 for start!",
-      `over ${bot.users.size} users!`,
-      "to my patreons on patreon"
-    ]
-  setInterval(function() {
-    let status = statuses[Math.floor(Math.random() * statuses.lenght)];
-    bot.user.setActivity(status, {type: "LISTENING"});
-    bot.user.setStatus("dnd"); //online, idle, dnd, invisible
-  }, 5000)
-  //bot.user.setGame("on SourceCade!");
-});
 
 bot.on("message", async message => {
   if(message.author.bot) return;
