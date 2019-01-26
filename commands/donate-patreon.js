@@ -10,6 +10,7 @@ module.exports.run = async (bot, message, args) => {
    .addField("Please Note:", "If you are not in Support server then screen that you bought that. or I wont belive you.")
    
    .setFooter("Patreons may have some exclusive features!")
+   message.channel.send(embed)
 }
 
 module.exports.help = {
