@@ -7,7 +7,7 @@ module.exports = bot => {
 
     let statuses = [
         `to ${bot.guilds.size} servers!`,
-        "my prefix is !="
+        "my prefix is !=",
         "start with !=help",
         `over ${bot.users.size} users!`
     ]
