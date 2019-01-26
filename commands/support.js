@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) => {
    var embed = new Discord.RichEmbed()
    .setAuthor("Support!", message.author.avatarURL)
    .addField("Discord:", "[Invite](https://discord.gg/4DAZqsR)")
-   .setColor("22023768")
+   .setColor("0xf4eb42")
    .setThumbnail(message.author.avatatURL);
    message.channel.send(embed)
 }
