@@ -44,6 +44,10 @@ module.exports.run = async (bot, message, args) => {
                         name: "!=donate",
                         value: "Donate me tought Patreon ;)",
                     },
+                    {
+                        name: "!=help 2"
+                        value: "Shows 2nd page of help."
+                    },
               ],
                   timestamp: new Date(),
                   footer: {
@@ -55,7 +59,49 @@ module.exports.run = async (bot, message, args) => {
                       name: "GodBot | help and fun!",
                     }
               }})};
-            return;
+           return;
+    };
+    if (!message.content.startsWith(PREFIX)) return;
+      message.delete(1)
+//why I cant make this help to work???????????????? IDK CUZ ITS RETARDET!!!
+      if(args[0] == "2"){
+        message.reply("please check your dms for the commands!");
+            message.author.send({embed: {
+                  color: 2221974,
+                  thumbnail: {
+                      url: (message.author.displayAvatarURL)
+                    },
+                  fields: [
+                      
+                      
+                    {
+                        name: "Prefix:",
+                        value: "!=",
+                    },
+                    {
+                        name: "meme",
+                        value: "Shows random meme!",
+                    },
+              ],
+                  timestamp: new Date(),
+                  footer: {
+                    icon_url: bot.user.displayAvatarURL ,
+                    text: "GodBot™ | Made by JustNela#8752 | page 2",
+                  },
+                  author: {
+                      icon_url: message.guild.iconURL,
+                      name: "GodBot | help and fun!",
+                    }
+              }})};
+           return;
+    };
+               
+                
+                 
+                   
+                 
+          
+            
 }
 
 module.exports.conf = {
