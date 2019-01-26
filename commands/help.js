@@ -45,8 +45,8 @@ module.exports.run = async (bot, message, args) => {
                         value: "Donate me tought Patreon ;)",
                     },
                     {
-                        name: "!=help 2"
-                        value: "Shows 2nd page of help."
+                        name: "!=help 2",
+                        value: "Shows 2nd page of help.",
                     },
               ],
                   timestamp: new Date(),
