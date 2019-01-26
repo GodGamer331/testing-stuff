@@ -41,8 +41,9 @@ bot.on("ready", async () => {
       "to my patreons on patreon"
     ]
   setInterval(function() {
-    let status = statuses[Math.floor(Math.random() * statuses.lenght)]
+    let status = statuses[Math.floor(Math.random() * statuses.lenght)];
     bot.user.setActivity(status, {type: "LISTENING"});
+    bot.user.setStatus("dnd");
   }, 5000)
   //bot.user.setGame("on SourceCade!");
 });
