@@ -28,7 +28,7 @@ fs.readdir("./commands/", (err, files) => {
 
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
-  setInterval(
+ 
   
     
     let statuses = [
@@ -38,7 +38,7 @@ bot.on("ready", async () => {
       "my prefix is !=",
       "!=help 1 for start!",
       `over ${bot.users.size} users!`,
-      "my patreons
+      "my patreons on patreon"
     ]
   setInterval(function() {
     let status = statuses[Math.floor(Math.random() * statuses.lenght)]
