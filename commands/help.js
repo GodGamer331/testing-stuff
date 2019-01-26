@@ -102,7 +102,7 @@ module.exports.run = async (bot, message, args) => {
                  
           
             
-}
+
 
 module.exports.conf = {
     aliases: ['h', 'halp']
