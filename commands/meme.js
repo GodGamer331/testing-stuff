@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) => {
     .setAuthor("MEME!!")
     .setImage(body.url);
     
-    message.channel.send(embed)
+    message.channel.send(embed);
     
 //module.exports.conf = {
  //   aliases: ['memes']
