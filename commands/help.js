@@ -36,6 +36,10 @@ module.exports.run = async (bot, message, args) => {
                         name: "!=ping",
                         value: "Will show you God Bot's current ping.",
                     },
+                    {
+                        name: "!=support",
+                        value: "Gives a link to our support server.",
+                    },
               ],
                   timestamp: new Date(),
                   footer: {
