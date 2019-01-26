@@ -40,6 +40,10 @@ module.exports.run = async (bot, message, args) => {
                         name: "!=support",
                         value: "Gives a link to our support server.",
                     },
+                    {
+                        name: "!=donate",
+                        value: "Donate me tought Patreon ;)",
+                    },
               ],
                   timestamp: new Date(),
                   footer: {
