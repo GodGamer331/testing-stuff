@@ -28,9 +28,22 @@ fs.readdir("./commands/", (err, files) => {
 
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
+  setInterval(
   
-  bot.user.setActivity("My patreons ;)", {type: "STREAMING"});
-
+    
+    let statuses = [
+    
+      
+      `${bot.guild.size}`,
+      "my prefix is !=",
+      "!=help 1 for start!",
+      `over ${bot.users.size} users!`,
+      "my patreons
+    ]
+  setInterval(function() {
+    let status = statuses[Math.floor(Math.random() * statuses.lenght)]
+    bot.user.setActivity(status, {type: "STREAMING"});
+  }, 5000)
   //bot.user.setGame("on SourceCade!");
 });
 
