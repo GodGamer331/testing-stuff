@@ -58,9 +58,9 @@ module.exports.run = async (bot, message, args) => {
                       icon_url: message.guild.iconURL,
                       name: "GodBot | help and fun!",
                     }
-              }})};
+            }})};
            return;
-    };
+    
     if (!message.content.startsWith(PREFIX)) return;
       message.delete(1)
 //why I cant make this help to work???????????????? IDK CUZ ITS RETARDET!!!
