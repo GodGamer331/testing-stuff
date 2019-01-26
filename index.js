@@ -38,11 +38,11 @@ bot.on("ready", async () => {
       "my prefix is !=",
       "!=help 1 for start!",
       `over ${bot.users.size} users!`,
-      "my patreons on patreon"
+      "to my patreons on patreon"
     ]
   setInterval(function() {
     let status = statuses[Math.floor(Math.random() * statuses.lenght)]
-    bot.user.setActivity(status, {type: "STREAMING"});
+    bot.user.setActivity(status, {type: "LISTENING"});
   }, 5000)
   //bot.user.setGame("on SourceCade!");
 });
