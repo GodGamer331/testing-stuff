@@ -48,51 +48,6 @@ bot.on("message", async message => {
   let commandfile = bot.commands.get(cmd.slice(prefix.length));
   if(commandfile) commandfile.run(bot,message,args);
   
-  if(!userData[sender.id + message.guild.id]) userData[sender.id + message.guild.id] = {}
-  if(!userData[sender.id + message.guild.id].money) userData[sender.id + message.guild.id].money = 500;
-  if(!userData[sender.id + message.guild.id].lastDaily) userData[sender.id + message.guild.id].lastDaily = "Not Collected!";
-  
-  
-  fs.writeFile('./Storage/userData.json', JSON.stringify(userData), (err) => {
-    if(err) console.log(err)
-  })
-  
-  
-  if(cmd === `${prefix}money` || cmd === `${prefix}balance` || cmd === `${prefix}bal`) {
-    var embed = new Discord.RichEmbed()
-    .setAuthor("Bank Balance", message.author.avatarURL)
-    .setColor("GREEN")
-    .addField("Account Owner:", message.author.username, true)
-    .addField("Account Balance:", userData[sender.id + message.guild.id].money, true)
-    .setTimestamp()
-    .setFooter("JustNela made this bot ;) | Economy version: vPre-alpha0.5");
-    message.channel.send(embed);
-    return;
-  }
-  if(cmd === `${prefix}daily` || cmd === `${prefix}d`) {
-    if(userData[sender.id + message.guild.id].lastDaily != moment().format('L')) {
-      userData[sender.id + message.guild.id].lastDaily = moment().format('L')
-      userData[sender.id + message.guild.id].money += 250;
-      message.channel.send({embed:{
-        author: "Daily Reward",
-        description: "You successfully claimed your daily _**250$**_!",
-        color: 0xf4c842,
-        
-      }})
-    } else {
-      message.channel.send({embed:{
-        author: "Daily Reward!",
-        description: "You already claimed your Daily reward!",
-        color: 0xf44259,
-      }})
-    }
-      
-  }
-  
-
-  fs.writeFile('./Storage/userData.json', JSON.stringify(userData), (err) => {
-    if(err) console.log(err)
-  })
   
  //WUTF IS DAT THING
 });
