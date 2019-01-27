@@ -53,7 +53,7 @@ bot.on("message", async message => {
   if(!userData[sender.id + message.guild.id].lastDaily) userData[sender.id + message.guild.id].lastDaily = "Not Collected!";
   
   
-  fs.writeFile('./Storage/userData', JSON.stringify(userData), (err) => {
+  fs.writeFile('./Storage/userData.json', JSON.stringify(userData), (err) => {
     if(err) console.log(err)
   })
   
@@ -90,7 +90,7 @@ bot.on("message", async message => {
   }
   
 
-  fs.writeFile('./Storage/userData', JSON.stringify(userData), (err) => {
+  fs.writeFile('./Storage/userData.json', JSON.stringify(userData), (err) => {
     if(err) console.log(err)
   })
   
