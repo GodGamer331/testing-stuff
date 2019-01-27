@@ -40,7 +40,7 @@ bot.on("message", async message => {
   if(message.author.bot) return;
   if(message.channel.type === "dm") return;
   
-  let money = db.fetch(`money_${message.guild.id}_${message.author.id}`);
+  let bal = db.fetch(`money_${message.guild.id}_${message.author.id}`);
   let sender = message.author;
   let prefix = botconfig.prefix;
   let messageArray = message.content.split(" ");
@@ -55,7 +55,7 @@ bot.on("message", async message => {
   if(cmd === `${prefix}bal` || cmd === `${prefix}balance`) {
     
 
-    if (money === null) money = 0;
+    if (bal === null) bal = 0;
 
     message.channel.send({embed:{
         color: 0x42f48c,
@@ -67,7 +67,7 @@ bot.on("message", async message => {
             },
             {
                 name: "Account Balance:",
-                value: money,
+                value: bal,
             },
         ],
         author: {
@@ -107,6 +107,17 @@ bot.on("message", async message => {
     }
 
 }
+  if (cmd === `${prefix}addmoney` || cmd === `${prefix}am`) {
+    if(!message.member.hasPermission('ADMINISTRATOR')) {
+      message.reply("Sorry You ran out of permissions!")
+    }
+    if(!args[0]) return message.reply("Please specify a amount!")
+    if(isNaN(args[0])) return message.reply("Please specify it in numbers.....")
+    
+    message.channel.send('Succesfully added!')
+    db.add(`money_{message.guild.id}_{message.author.id}`)
+                            
+  }
 
   
  //WUTF IS DAT THING
