@@ -2,6 +2,7 @@ const botconfig = require("./botconfig.json");
 //const tokenfile = require("./token.json");
 const Discord = require("discord.js");
 const fs = require("fs");
+const moment = require("moment");
 //const superagent = require("superagent")
 
 //JSON files
@@ -47,10 +48,13 @@ bot.on("message", async message => {
   
   if(!userData[sender.id + message.guild.id]) userData[sender.id + message.guild.id] = {}
   if(!userData[sender.id + message.guild.id].money) userData[sender.id + message.guild.id].money = 500;
+  if(!userData[sender.id + message.guild.id].lastDaily) userData[sender.id + message.guild.id].lastDaily = "Not Collected!";
+  
   
   fs.writeFile('Storage/userData', JSON.stringify(userData), (err) => {
     if(err) console.log(err)
   })
+  
   
   if(cmd === `${prefix}money` || cmd === `${prefix}balance` || cmd === `${prefix}bal`) {
     var embed = new Discord.RichEmbed()
@@ -63,7 +67,30 @@ bot.on("message", async message => {
     message.channel.send(embed);
     return;
   }
+  if(cmd === `${prefix}daily` || cmd === `${prefix}d`) {
+    if(userData[sender.id + message.guild.id].lastDaily != moment().format('L')) {
+      userData[sender.id + message.guild.id].lastDaily = moment().format('L')
+      userData[sender.id + message.guild.id].money += 250;
+      message.channel.send({embed:{
+        author: "Daily Reward",
+        description: "You successfully claimed your daily _**250$**_!",
+        color: 0xf4c842,
+        
+      }})
+    } else: {
+      message.channel.send({embed:{
+        author: "Daily Reward!",
+        description: "You already claimed your Daily reward!",
+        color: 0xf44259,
+      }})
+    }
+      
+  }
 
+  fs.writeFile('Storage/userData', JSON.stringify(userData), (err) => {
+    if(err) console.log(err)
+  })
+  
  //WUTF IS DAT THING
 });
 bot.login(process.env.token);
