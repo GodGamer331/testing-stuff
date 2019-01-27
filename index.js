@@ -40,6 +40,7 @@ bot.on("message", async message => {
   if(message.author.bot) return;
   if(message.channel.type === "dm") return;
   
+  let money = db.fetch(`money_${message.guild.id}_${message.author.id}`);
   let sender = message.author;
   let prefix = botconfig.prefix;
   let messageArray = message.content.split(" ");
@@ -52,9 +53,9 @@ bot.on("message", async message => {
   if(commandfile) commandfile.run(bot,message,args);
   
   if(cmd === `${prefix}bal` || cmd === `${prefix}balance`) {
-    let bal = db.fetch(`money_${message.guild.id}_${message.author.id}`)
+    
 
-    if (bal === null) bal = 0;
+    if (money === null) money = 0;
 
     message.channel.send({embed:{
         color: 0x42f48c,
@@ -80,34 +81,7 @@ bot.on("message", async message => {
 
 
 };
- if (cmd === `${prefix}daily` || cmd === `${prefix}d`) {
- let timeout = 86400000 // 24 hours in milliseconds, change if you'd like.
-    let amount = 500
-    // random amount: Math.floor(Math.random() * 1000) + 1;
-
-
-    let daily = await db.fetch(`daily_${message.author.id}`);
-
-    if (daily !== null && timeout - (Date.now() - daily) > 0) {
-        let time = ms(timeout - (Date.now() - daily));
-
-        message.channel.send(`You already collected ur daily reward, you can come back and collect it in **${time.hours}h ${time.minutes}m ${time.seconds}s**!`)
-    } else {
-    let embed = new Discord.RichEmbed()
-    .setAuthor(`Daily`, message.author.displayAvatarURL)
-    .setColor("GREEN")
-    .setDescription(`**Daily Reward**`)
-    .addField(`Collected`, amount)
-
-    message.channel.send(embed)
-    db.add(`money_${message.author.id}`, amount)
-    db.set(`daily_${message.author.id}`, Date.now())
-        
-    }
-
-}
-
-  
+ 
  //WUTF IS DAT THING
 });
 bot.login(process.env.token);
