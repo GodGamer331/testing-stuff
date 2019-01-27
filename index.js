@@ -106,7 +106,7 @@ bot.on("message", async message => {
         
     }
 
-}
+  }
   if (cmd === `${prefix}addmoney` || cmd === `${prefix}am`) {
     if(!message.member.hasPermission('ADMINISTRATOR')) {
       message.reply("Sorry You ran out of permissions!")
