@@ -6,7 +6,7 @@ const moment = require("moment");
 //const superagent = require("superagent")
 
 //JSON files
-let userData = JSON.parse(fs.readFileSync('Storage/userData.json', 'utf8'));
+let userData = JSON.parse(fs.readFileSync('./Storage/userData.json', 'utf8'));
 
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
@@ -53,7 +53,7 @@ bot.on("message", async message => {
   if(!userData[sender.id + message.guild.id].lastDaily) userData[sender.id + message.guild.id].lastDaily = "Not Collected!";
   
   
-  fs.writeFile('Storage/userData', JSON.stringify(userData), (err) => {
+  fs.writeFile('./Storage/userData', JSON.stringify(userData), (err) => {
     if(err) console.log(err)
   })
   
@@ -90,7 +90,7 @@ bot.on("message", async message => {
   }
   
 
-  fs.writeFile('Storage/userData', JSON.stringify(userData), (err) => {
+  fs.writeFile('./Storage/userData', JSON.stringify(userData), (err) => {
     if(err) console.log(err)
   })
   
