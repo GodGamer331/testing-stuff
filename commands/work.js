@@ -60,3 +60,7 @@ exports.run = async (client, message, args, config) => {
 
 
 }
+module.exports.help = {
+    name: "work",
+    aliases: []
+}
