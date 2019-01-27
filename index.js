@@ -41,6 +41,8 @@ bot.on("message", async message => {
   let prefix = botconfig.prefix;
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
+  let modR = "Moderator";
+  let adminR = "Administrator";
   let args = messageArray.slice(1);
   //let prefix = botconfig.prefix;
   let commandfile = bot.commands.get(cmd.slice(prefix.length));
@@ -85,6 +87,32 @@ bot.on("message", async message => {
       }})
     }
       
+  }
+  if(cmd === `${prefix}setbal`) {
+    if(!message.member.roles.find("name", modR) || !message.member.roles.find("name", adminR)) {
+      message.channel.send("You do not have permission! Roles with permission: ``Moderator``, ``Administrator``!");
+    }
+    if(!args[0]) {
+      message.channel.send("Please specify a amount! Usage: ``!=setbal ``<amount>`` <user>.");
+      return;
+    }
+    if(isNaN(args[0])) {
+      message.channel.send("Amount should be only numbers!")
+      return;
+    }
+    let defUser = " ";
+    if(!args[1]) {
+      defUser = message.author.id;
+    } else {
+      
+      let defUser = message.mentions.users.first();
+      let defmUser = defUser.id;
+    
+    }
+    economy.updateBalance(defUser + message.guild.id, args[0]).then((i) => {
+                         // args[0]).then((i) => {
+      message.channel.send("Succesful!")
+    });
   }
 
   fs.writeFile('Storage/userData', JSON.stringify(userData), (err) => {
