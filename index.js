@@ -56,26 +56,26 @@ bot.on("message", async message => {
     
 
     if (bal === null) bal = 0;
-
-    message.channel.send({embed:{
-        color: 0x42f48c,
-        fields: [
-            {
-                name: "Account Owner",
-                value: message.author.username,
+   // let user = message.author || 
+    message.channel.send("You have balance of " + bal)
+      //  color: 0x42f48c,
+       // fields: [
+          //  {
+           //     name: "Account Owner",
+              //  value: message.author.username,
                
-            },
-            {
-                name: "Account Balance:",
-                value: bal,
-            },
-        ],
-        author: {
-            icon_url: message.author.avatarURL,
-            text: "Bank Vault!"
-        }
+         //   },
+          //  {
+           //     name: "Account Balance:",
+            //    value: bal,
+          //  },
+       // ],
+     //   author: {
+     //       icon_url: message.author.avatarURL,
+          //  text: "Bank Vault!"
+      //  }
             
-    }})
+ //   }})
       
     
 
