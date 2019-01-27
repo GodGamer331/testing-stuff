@@ -3,6 +3,8 @@ const botconfig = require("./botconfig.json");
 const Discord = require("discord.js");
 const fs = require("fs");
 const moment = require("moment");
+const db = require("quick.db");
+
 //const superagent = require("superagent")
 
 //JSON files
@@ -48,6 +50,37 @@ bot.on("message", async message => {
   let commandfile = bot.commands.get(cmd.slice(prefix.length));
   if(commandfile) commandfile.run(bot,message,args);
   
+  if(cmd === `${prefix}bal` || cmd === `${prefix}balance`) {
+    let bal = db.fetch(`money_${message.guild.id}_${message.author.id}`)
+
+    if (bal === null) bal = 0;
+
+    message.channel.send({embed:{
+        color: 0x42f48c,
+        fields: [
+            {
+                name: "Account Owner",
+                value: message.author.username,
+               
+            },
+            {
+                name: "Account Balance:",
+                value: bal,
+            },
+        ],
+        author: {
+            icon_url: message.author.avatarURL,
+            text: "Bank Vault!"
+        }
+            
+    }})
+      
+    
+
+
+};
+    
+
   
  //WUTF IS DAT THING
 });
