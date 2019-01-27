@@ -4,8 +4,16 @@ const Discord = require('discord.js')
 module.exports.run = async (client, message, args, config) => {
 
 
-    
-    if (args[0] == 'prostitute') {
+    if (args[0] === 'help') {
+        let embed = new Discord.RichEmbed()
+        .setAuthor("Work help!")
+        .setDescription("Work types: \nconstructor \nprogrammer \nprostitute")
+        .setColor("GREEN")
+        .setFooter("V0.4alpha")
+        .setTimestamp();
+        message.channel.send(embed)
+        
+    } else if (args[0] == 'prostitute') {
 
         let amount = Math.floor(Math.random() * 500) + 1; // 1-500 random number. whatever you'd like
 
