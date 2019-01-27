@@ -3,6 +3,7 @@ const PREFIX = "!="
 const superagent = require('superagent');
 
 module.exports.run = async (bot, message, args) => {
+
     
     let {body} = await superagent
     .get('https://api-to.get-a.life/meme');
@@ -15,7 +16,7 @@ module.exports.run = async (bot, message, args) => {
     
 //module.exports.conf = {
  //   aliases: ['memes']
-//};
+};
 
 // ADD DESCRIPTION AND SUCH
 module.exports.help = {
