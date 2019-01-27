@@ -8,6 +8,10 @@
   },
   "author": "JustNela",
   "license": "ISC",
+  
+  "engines": {
+    "node": ">=7.0.0"
+  },
   "dependencies": {
     "discord.js": "^11.3.2",
     "superagent": "^3.8.3",
