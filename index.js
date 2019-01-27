@@ -41,7 +41,7 @@ bot.on("message", async message => {
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
-  let prefix = botconfig.prefix;
+  //let prefix = botconfig.prefix;
   let commandfile = bot.commands.get(cmd.slice(prefix.length));
   if(commandfile) commandfile.run(bot,message,args);
   
@@ -58,8 +58,8 @@ bot.on("message", async message => {
     .setColor("GREEN")
     .addField("Account Owner:", message.author.username, true)
     .addField("Account Balance:", userData[sender.id + message.guild.id].money, true)
-    
-    .setFooter("JustNela made this bot ;)");
+    .setTimestamp()
+    .setFooter("JustNela made this bot ;) | Economy version: vPre-alpha0.5");
   }
 
  //WUTF IS DAT THING
