@@ -4,6 +4,8 @@ const Discord = require("discord.js");
 const fs = require("fs");
 //const superagent = require("superagent")
 
+//JSON files
+let userData = JSON.parse(fs.readFileSync('Storage/userData.json', 'utf8'));
 
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
@@ -33,7 +35,8 @@ fs.readdir("./commands/", (err, files) => {
 bot.on("message", async message => {
   if(message.author.bot) return;
   if(message.channel.type === "dm") return;
-
+  
+  let sender = message.author;
   let prefix = botconfig.prefix;
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
@@ -42,6 +45,12 @@ bot.on("message", async message => {
   let commandfile = bot.commands.get(cmd.slice(prefix.length));
   if(commandfile) commandfile.run(bot,message,args);
   
+  if(!userData[sender.id + message.guild.id]) userData[sender.id + message.guild.id] = {}
+  if(!userData[sender.id + message.guild.id].money) userData[sender.id + message.guild.id].money = 500;
+  
+  fs.writeFile('Storage/userData', JSON.stringify(userData), (err) => {
+    if(err) console.log(err)
+  })
  // if(message.content === `${prefix}update`);
  // var embed = new Discord.RichEmbed()
   //.setAuthor("New Update!")
