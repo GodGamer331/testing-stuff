@@ -67,7 +67,7 @@ bot.on("message", async message => {
             },
             {
                 name: "Account Balance:",
-                value: bal,
+                value: money,
             },
         ],
         author: {
