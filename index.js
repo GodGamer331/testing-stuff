@@ -77,7 +77,7 @@ bot.on("message", async message => {
         color: 0xf4c842,
         
       }})
-    } else: {
+    } else {
       message.channel.send({embed:{
         author: "Daily Reward!",
         description: "You already claimed your Daily reward!",
