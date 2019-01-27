@@ -32,3 +32,7 @@ module.exports.run = async (client, message, args, config) => {
 
 
 }
+module.exports.help = {
+    name: "pay",
+    aliases: []
+}
