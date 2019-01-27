@@ -41,7 +41,7 @@ bot.on("message", async message => {
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
-
+  let prefix = botconfig.prefix;
   let commandfile = bot.commands.get(cmd.slice(prefix.length));
   if(commandfile) commandfile.run(bot,message,args);
   
@@ -51,18 +51,16 @@ bot.on("message", async message => {
   fs.writeFile('Storage/userData', JSON.stringify(userData), (err) => {
     if(err) console.log(err)
   })
- // if(message.content === `${prefix}update`);
- // var embed = new Discord.RichEmbed()
-  //.setAuthor("New Update!")
-//.addField("Changed prefix to:", "!=")
- // .addField("Added avatar command", "Use: !=avatar (player)")
- // .setColor("GREEN")
-//.setFooter("v1.6.1 | Made by {^=^}DEVELOPER{^=^}")
- // .setTimestamp();
-  //let tchannel = message.guild.channels.find(`name`, "bot-updates");
- //message.channel.send(embed)
-//  return;
   
+  if(cmd === `${prefix}money` || cmd === `${prefix}balance` || cmd === `${prefix}bal`) {
+    var embed = new Discord.RichEmbed()
+    .setAuthor("Bank Balance", message.author.avatarURL)
+    .setColor("GREEN")
+    .addField("Account Owner:", message.author.username, true)
+    .addField("Account Balance:", userData[sender.id + message.guild.id].money, true)
+    
+    .setFooter("JustNela made this bot ;)");
+  }
 
  //WUTF IS DAT THING
 });
