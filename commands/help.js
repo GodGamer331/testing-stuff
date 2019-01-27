@@ -56,33 +56,33 @@ module.exports.run = async (bot, message, args) => {
                   },
                   author: {
                       icon_url: message.guild.iconURL,
-                      name: "GodBot | help and fun!",
+                      name: "StrandBOT | Help Page: 1",
                     }
-            }})};
-           return;
-    
-    if (!message.content.startsWith(PREFIX)) return;
-      message.delete(1)
-//why I cant make this help to work???????????????? IDK CUZ ITS RETARDET!!!
-      if(args[0] == "2"){
-        message.reply("please check your dms for the commands!");
+              }});
+            return;
+        };
+
+        if(args[0] == "2"){
+            message.reply("please check your dms for the commands!");
             message.author.send({embed: {
-                  color: 2221974,
+                  color: 1339135,
                   thumbnail: {
                       url: (message.author.displayAvatarURL)
                     },
                   fields: [
-                      
-                      
-                    {
-                        name: "Prefix:",
-                        value: "!=",
-                    },
-                    {
-                        name: "meme",
-                        value: "Shows random meme!",
-                    },
-              ],
+                        {
+                            name: "My prefix is:",
+                            value: "!=",
+                        },
+                        {
+                            name: "meme",
+                            value: "Shows a funny meme!",
+                        },
+                        {
+                            name: "balance",
+                            value: "Aliases: bal, money. Shows your balance!",
+                        }
+                      ],
                   timestamp: new Date(),
                   footer: {
                     icon_url: bot.user.displayAvatarURL ,
@@ -91,7 +91,7 @@ module.exports.run = async (bot, message, args) => {
                   author: {
                       icon_url: message.guild.iconURL,
                       name: "GodBot | help and fun!",
-                    }
+                    },
               }})};
            return;
 };
