@@ -9,6 +9,7 @@
   "author": "JustNela",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^11.3.2"
+    "discord.js": "^11.3.2",
+    "superagent": "^3.8.3"
   }
 }
