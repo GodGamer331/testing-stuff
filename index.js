@@ -115,7 +115,7 @@ bot.on("message", async message => {
     if(isNaN(args[0])) return message.reply("Please specify it in numbers.....")
     
     message.channel.send('Succesfully added!')
-    db.add(`money_{message.guild.id}_{message.author.id}` args[0])
+    db.add(`money_{message.guild.id}_{message.author.id}`, args[0])
                             
   }
 
