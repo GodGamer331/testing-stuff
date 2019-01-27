@@ -60,6 +60,8 @@ bot.on("message", async message => {
     .addField("Account Balance:", userData[sender.id + message.guild.id].money, true)
     .setTimestamp()
     .setFooter("JustNela made this bot ;) | Economy version: vPre-alpha0.5");
+    message.channel.send(embed);
+    break;
   }
 
  //WUTF IS DAT THING
