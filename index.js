@@ -80,6 +80,7 @@ bot.on("message", async message => {
 
 
 };
+ if (cmd === `${prefix}daily` || cmd === `${prefix}d`) {
  let timeout = 86400000 // 24 hours in milliseconds, change if you'd like.
     let amount = 500
     // random amount: Math.floor(Math.random() * 1000) + 1;
@@ -104,7 +105,7 @@ bot.on("message", async message => {
         
     }
 
-};
+}
 
   
  //WUTF IS DAT THING
