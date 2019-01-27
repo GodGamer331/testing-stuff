@@ -61,7 +61,7 @@ bot.on("message", async message => {
     .setTimestamp()
     .setFooter("JustNela made this bot ;) | Economy version: vPre-alpha0.5");
     message.channel.send(embed);
-    break;
+    return;
   }
 
  //WUTF IS DAT THING
