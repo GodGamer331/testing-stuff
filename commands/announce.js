@@ -5,12 +5,13 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
    let aUser = message.author.username
    let reason = args.join(" ").slice(22);
+   let (!reason) return message.reply("Please specify a update!");
    let staff = message.member.roles.find("name", "¢=[BOT DEVELOPER]=¢");
    if(!staff) return message.reply("You do not have enought Permissions!");
    
    var embed = new Discord.RichEmbed()
    .setAuthor("New Update", message.author.avatarURL)
-   .setDescription(reason)
+   .setDescription( reason )
    .setColor("GREEN")
    .addField("Developer:", aUser);
    //let Achannel = 
