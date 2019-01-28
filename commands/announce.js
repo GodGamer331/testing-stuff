@@ -4,7 +4,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
    let aUser = message.author.username
-   let reason = message.content.split(' ').slice(0);
+   let reason = message.content.split(' ').slice(1);
    let reason1 = reason.join(" ");
    if(!reason) return message.reply("Please specify a update!");
    let staff = message.member.roles.find("name", "¢=[BOT DEVELOPER]=¢");
@@ -21,6 +21,6 @@ module.exports.run = async (bot, message, args) => {
 }
 
 module.exports.help = {
-    name: "update-log",
+    name: "log",
     aliases: []
 }
