@@ -126,6 +126,7 @@ module.exports.run = async (bot, message, args) => {
                       name: "GodBot | Developer help!",
                     },
               }})};
+           return;
 };
                 
                  
