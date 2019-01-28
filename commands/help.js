@@ -60,7 +60,9 @@ module.exports.run = async (bot, message, args) => {
                     }
               }});
             return;
+          
         };
+        
 
         if(args[0] == "2"){
             message.reply("please check your dms for the commands!");
@@ -92,14 +94,13 @@ module.exports.run = async (bot, message, args) => {
                       icon_url: message.guild.iconURL,
                       name: "GodBot | help and fun!",
                     },
-              }})};
-           return;
-       
-
-       let staff = message.member.roles.find("name", "¢=[BOT DEVELOPER]=¢");
-       if(!staff) return message.reply("You are not Developer!");
-       
-       if(args[0] == "dev"){
+              }});
+             return;
+            };
+        let staff = message.member.roles.find("name", "¢=[BOT DEVELOPER]=¢");
+        if(!staff) return message.reply("You do not have enought Permissions!");
+   
+        if(args[0] == "dev"){
             message.reply("please check your dms for the commands!");
             message.author.send({embed: {
                   color: 1339135,
@@ -108,26 +109,28 @@ module.exports.run = async (bot, message, args) => {
                     },
                   fields: [
                         {
-                            name: "prefix:",
+                            name: "My prefix is:",
                             value: "!=",
                         },
                         {
                             name: "!=log",
-                            value: "Makes a update log!",
-                        },
+                            value: "Makes a Update log!",
+                        }
                       ],
-                timestamp: new Date(),
+                  timestamp: new Date(),
                   footer: {
                     icon_url: bot.user.displayAvatarURL ,
-                    text: "GodBot™ | Made by JustNela#8752 | page ???",
+                    text: "GodBot™ | Made by JustNela#8752 | page 2",
                   },
                   author: {
                       icon_url: message.guild.iconURL,
-                      name: "GodBot | Developer help!",
+                      name: "GodBot | help and fun!",
                     },
-              }})};
-           return;
-
+              }});
+             return;
+            };
+    
+    
                 
                  
                    
