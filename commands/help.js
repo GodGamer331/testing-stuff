@@ -56,7 +56,7 @@ module.exports.run = async (bot, message, args) => {
                   },
                   author: {
                       icon_url: message.guild.iconURL,
-                      name: "StrandBOT | Help Page: 1",
+                      name: "GodBot | Help Page: 1",
                     }
               }});
             return;
@@ -94,8 +94,39 @@ module.exports.run = async (bot, message, args) => {
                     },
               }})};
            return;
+       };
+
+       let staff = message.member.roles.find("name", "¢=[BOT DEVELOPER]=¢");
+       if(!staff) return message.reply("You are not Developer!");
+       
+       if(args[0] == "dev"){
+            message.reply("please check your dms for the commands!");
+            message.author.send({embed: {
+                  color: 1339135,
+                  thumbnail: {
+                      url: (message.author.displayAvatarURL)
+                    },
+                  fields: [
+                        {
+                            name: "prefix:",
+                            value: "!=",
+                        },
+                        {
+                            name: "!=log",
+                            value: "Makes a update log!",
+                        },
+                      ],
+                timestamp: new Date(),
+                  footer: {
+                    icon_url: bot.user.displayAvatarURL ,
+                    text: "GodBot™ | Made by JustNela#8752 | page ???",
+                  },
+                  author: {
+                      icon_url: message.guild.iconURL,
+                      name: "GodBot | Developer help!",
+                    },
+              }})};
 };
-               
                 
                  
                    
