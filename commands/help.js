@@ -94,7 +94,7 @@ module.exports.run = async (bot, message, args) => {
                     },
               }})};
            return;
-       };
+       
 
        let staff = message.member.roles.find("name", "¢=[BOT DEVELOPER]=¢");
        if(!staff) return message.reply("You are not Developer!");
@@ -135,7 +135,7 @@ module.exports.run = async (bot, message, args) => {
           
             
 
-
+};
 //module.exports.conf = {
   //aliases: ['h', 'halp']
 //};
