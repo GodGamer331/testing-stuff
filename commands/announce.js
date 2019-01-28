@@ -13,7 +13,9 @@ module.exports.run = async (bot, message, args) => {
    .setDescription(reason)
    .setColor("GREEN")
    .addField("Developer:", aUser);
-   message.channel.send(embed)
+   //let Achannel = 
+   let Achannel = message.guild.channels.find(`name`, "bot-updates");
+   Achannel.send(embed)
 }
 
 module.exports.help = {
