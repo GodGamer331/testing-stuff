@@ -1,4 +1,4 @@
-const randomnsfw = require('random-puppy');
+const randompuppy = require('random-puppy');
 
 module.exports.run = async (bot, message, args) => {
  
