@@ -1,4 +1,6 @@
+const Discord = require("discord.js");
 const randompuppy = require('random-puppy');
+
 
 module.exports.run = async (bot, message, args) => {
  
