@@ -119,20 +119,9 @@ bot.on("message", async message => {
                             
   }
  
-  if (message.content === `${prefix}hentai`) {
-      if (!message.channel.nsfw) 
-      return message.channel.send("Please use this command in channels that are marked as NSFW!");
-    superagent.get('https://nekos.life/api/v2/img/hentai')
-        .end((err, response) => {
-            const lewdembed = new Discord.RichEmbed()
-                .setTitle(`Hentai`)
-                .setImage(response.body.url)
-                .setColor("RANDOM")
-                .setFooter("God Bot", bot.user.displayAvatarURL)
-                .setTimestamp();
-            message.channel.send(lewdembed);
-        })
-} 
+ // if (message.content === `${prefix}hentai`) {
+      
+//} 
 	
   
  //WUTF IS DAT THING
