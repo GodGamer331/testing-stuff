@@ -118,21 +118,22 @@ bot.on("message", async message => {
     db.add(`money_{message.guild.id}_{message.author.id}`, args[0])
                             
   }
-  
-  if (message.content === (`${prefix}hentai)) {
-     if (!message.channel.nsfw)
-     return message.channel.send("Please use this command in channels that are marked as NSFW!");
-   superagent.get('https://nekos.life/api/v2/img/hentai')
-       .end((err, response) => {
-           const lewdembed = new Discord.RichEmbed()
-               .setImage(response.body.url)
-               .setColor("RANDOM")
-               .setFooter("God Bot", bot.user.displayAvatarURL)
-               .setTimestamp();
+ 
+  if (message.content === `${prefix}hentai`) {
+      if (!message.channel.nsfw) 
+      return message.channel.send("Please use this command in channels that are marked as NSFW!");
+    superagent.get('https://nekos.life/api/v2/img/hentai')
+        .end((err, response) => {
+            const lewdembed = new Discord.RichEmbed()
+                .setTitle(`Hentai`)
+                .setImage(response.body.url)
+                .setColor("RANDOM")
+                .setFooter("God Bot", bot.user.displayAvatarURL)
+                .setTimestamp();
             message.channel.send(lewdembed);
         })
 } 
-
+	
   
  //WUTF IS DAT THING
 });
