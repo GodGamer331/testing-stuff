@@ -97,12 +97,12 @@ module.exports.run = async (bot, message, args) => {
               }});
              return;
             };
-        let staff = message.member.roles.find("name", "¢=[BOT DEVELOPER]=¢");
-        if(!staff) return message.reply("You do not have enought Permissions!");
+            let staff = message.member.roles.find("name", "¢=[BOT DEVELOPER]=¢");
+            if(!staff) return message.reply("You do not have enought Permissions!");
    
-        if(args[0] == "dev"){
-            message.reply("please check your dms for the commands!");
-            message.author.send({embed: {
+            if(args[0] == "def"){
+                message.reply("please check your dms for the commands!");
+                message.author.send({embed: {
                   color: 1339135,
                   thumbnail: {
                       url: (message.author.displayAvatarURL)
@@ -129,6 +129,42 @@ module.exports.run = async (bot, message, args) => {
               }});
              return;
             };
+            
+       // let staff = message.member.roles.find("name", "¢=[BOT DEVELOPER]=¢");
+       // if(!staff) return message.reply("You do not have enought Permissions!");
+   
+        if(args[0] == "nsfw"){
+            message.reply("please check your dms for the commands!");
+            message.author.send({embed: {
+                  color: 24466241,
+                  thumbnail: {
+                          url: (message.author.displayAvatarURL)
+                        },
+                      fields: [
+                            {
+                                name: "My prefix is:",
+                                value: "!=",
+                            },
+                            {
+                                name: "boobs",
+                                value: "Shows some tits! Sometimes some random stuff..",
+                            },
+                            {
+                                name: "hentai",
+                                value: "Shows some good hentai pictures!",
+                            }
+                          ],
+                  timestamp: new Date(),
+                  footer: {
+                    icon_url: bot.user.displayAvatarURL ,
+                    text: "GodBot™ | Made by JustNela#8752 | page 2",
+                  },
+                  author: {
+                      icon_url: message.guild.iconURL,
+                      name: "GodBot | help and fun!",
+                    },
+              }});
+             return;
     
     
                 
