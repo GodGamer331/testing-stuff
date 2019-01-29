@@ -3,10 +3,10 @@ const randomPuppy = require('random-puppy');
 module.exports.run = async (bot, message, args) => {
  
  if(!message.channel.nsfw) return message.reply("Please use this command in channels that are marked as NSFW!");
- let reddit = ["meme",
-                       "pussy",
-                       "vagina",
-                       "wetPussy"
+ let reddit = [
+               "pussy",
+               "vagina",
+               "wetPussy"
                        
                        
                        
