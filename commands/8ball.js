@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const PREFIX = "god."
+const PREFIX = "!="
 
 var fortunes = [
     "Yes",
@@ -16,7 +16,7 @@ module.exports.run = async (bot, message, args) => {
     if(!message.content.startsWith(PREFIX)) return;
 
     if(args[0] == "help"){
-        message.reply("Usage: >8ball <question>");
+        message.reply("Usage: !=8ball <question>");
         return;
     };
 
