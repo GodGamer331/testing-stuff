@@ -6,8 +6,8 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
 
 
-    if (!message.channel.nsfw) 
-          return message.channel.send("Please use this command in channels that are marked as NSFW!");
+    if (!message.channel.nsfw) return message.channel.send("Please use this command in channels that are marked as NSFW!");
+         // return 
         superagent.get('https://nekos.life/api/v2/img/hentai')
             .end((err, response) => {
                 var lewdembed = new Discord.RichEmbed()
@@ -18,6 +18,8 @@ module.exports.run = async (bot, message, args) => {
                     .setTimestamp();
                 message.channel.send(lewdembed);
             });
+    
+}
 
 module.exports.help = {
     name: "hentai",
