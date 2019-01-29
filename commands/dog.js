@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) => {
 	    .setAuthor("Dog 🐕 ")
             .setColor(0xff9000)
             .setImage(api)
-            .setFooter("God Bot", reddit)
+            .setFooter("God Bot")
             .setTimestamp();
       message.channel.send(theirembed)
       })
