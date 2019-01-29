@@ -1,26 +1,33 @@
-const Discord = require("discord.js")
-const PREFIX = "!="
-const superagent = require('superagent');
+
+const randomPuppy = require('random-puppy'); 
 
 module.exports.run = async (bot, message, args) => {
 
-    
-    let {body} = await superagent
-    .get('https://api-to.get-a.life/meme');
-    
-    var embed = new Discord.RichEmbed()
-    .setAuthor("MEME!!")
-    .setImage(body.url);
-    
-    message.channel.send(embed);
-    
-//module.exports.conf = {
- //   aliases: ['memes']
+ let reddit = ["meme",
+                       "animemes", 
+                       "MemesOfAnime",
+                       "animememes",
+                       "AnimeFunny",
+                       "dankmemes", 
+                       "dankmeme"
+  ]
+
+let subreddit = reddit[Math.floor(Math.random() * reddit.length)];
+
+ message.channel.startTyping(); 
+
+randomPuppy(subreddit).then(async url => {
+                    await message.channel.send({
+                            files: [{ 
+                                  attachment: url, 
+                                  name: 'meme.png' 
+                          }]           
+                   }).then(() => message.channel.stopTyping()); 
+    }).catch(err => console.error(err)); 
+
 };
 
-// ADD DESCRIPTION AND SUCH
-module.exports.help = {
-    name: "meme"
-
-}
-//Is anyone reading this?
+ module.exports.help = {
+           name: 'meme', 
+           aliases: ['memes']
+} 
