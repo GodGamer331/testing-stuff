@@ -48,6 +48,10 @@ module.exports.run = async (bot, message, args) => {
                         name: "!=help 2",
                         value: "Shows 2nd page of help.",
                     },
+                    {
+                        name: "!=help nsfw",
+                        value: "Shows Nsfw commands!",
+                    },
               ],
                   timestamp: new Date(),
                   footer: {
@@ -83,6 +87,10 @@ module.exports.run = async (bot, message, args) => {
                         {
                             name: "balance",
                             value: "Aliases: bal, money. Shows your balance!",
+                        },
+                        {
+                            name: "dog",
+                            value: "Show a dog picture!",
                         }
                       ],
                   timestamp: new Date(),
@@ -136,7 +144,7 @@ module.exports.run = async (bot, message, args) => {
         if(args[0] == "nsfw"){
             message.reply("please check your dms for the commands!");
             message.author.send({embed: {
-                  color: 24466241,
+                  color: 0xf442dc,
                   thumbnail: {
                           url: (message.author.displayAvatarURL)
                         },
