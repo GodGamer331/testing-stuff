@@ -4,10 +4,12 @@ module.exports.run = async (bot, message, args) => {
  
  if(!message.channel.nsfw) return message.reply("Please use this command in channels that are marked as NSFW!");
  let reddit = ["meme",
-                       "lesbian", 
-                       "nakedgirls",
-                       "lesbiangif",
-                       "nekoLesbian"
+                       "pussy",
+                       "vagina",
+                       "wetPussy"
+                       
+                       
+                       
                        
                        
                       
