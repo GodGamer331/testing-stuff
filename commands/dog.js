@@ -14,7 +14,9 @@ module.exports.run = async (bot, message, args) => {
       message.channel.send(theirembed)
       })
      }
-     
+   
+};
+
  module.exports.help = {
            name: 'dog'	
 }    
