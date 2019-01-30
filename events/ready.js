@@ -9,7 +9,7 @@ module.exports = bot => {
         `to ${bot.guilds.size} servers!`,
         "my prefix is !=",
         "start with !=help 1",
-        "Version: 3.3-alpha!
+        "Version: 3.3-alpha!",
         `over ${bot.users.size} users!`
     ]
 
