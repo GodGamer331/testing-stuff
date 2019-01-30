@@ -6,6 +6,8 @@ module.exports.run = async (bot, message, args) => {
  let reddit = [
                "pussy",
                "vagina",
+               "vaginaGif",
+               "lickingVagina",
                "wetPussy"
                        
                        
