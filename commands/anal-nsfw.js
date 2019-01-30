@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
                "sexInAss"
   ]
 
-let imgur = imgur[Math.floor(Math.random() * imgur.length)];
+let imgur1 = imgur[Math.floor(Math.random() * imgur.length)];
 
  message.channel.startTyping(); 
 
