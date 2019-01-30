@@ -1,11 +1,13 @@
-const randomPuppy = require('random-puppy'); 
+
+const Discord = require("discord.js");
+const superagent = require("superagent");
 
 module.exports.run = async (bot, message, args) => {
  
  
 	    if (!message.channel.nsfw) return message.channel.send("Please use this command in channels that are marked as NSFW!");
          // return 
-        randomPuppy.get('https://nekobot.xyz/api/image?type=pussy')
+        superagent.get('https://nekobot.xyz/api/image?type=pussy')
             .end((err, response) => {
                 var lewdembed = new Discord.RichEmbed()
                     .setTitle(`Pussy`)
