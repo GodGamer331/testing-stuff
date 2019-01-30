@@ -13,7 +13,7 @@ let imgur1 = imgur[Math.floor(Math.random() * imgur.length)];
 
  message.channel.startTyping(); 
 
-randomPuppy(subreddit).then(async url => {
+randomPuppy(imgur1).then(async url => {
                     await message.channel.send({
                             files: [{ 
                                   attachment: url, 
