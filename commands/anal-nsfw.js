@@ -1,28 +1,18 @@
-const randomPuppy = require('random-puppy'); 
+const discord = require('discord.js');
+const superagent = require('superagent')
 
-module.exports.run = async (bot, message, args) => {
- 
- if(!message.channel.nsfw) return message.reply("Please use this command in channels that are marked as NSFW!");
- let imgur = [
-               "analGif",
-               "anal",
-               "sexInAss"
-  ]
-
-let imgur1 = imgur[Math.floor(Math.random() * imgur.length)];
-
- message.channel.startTyping(); 
-
-randomPuppy(imgur1).then(async url => {
-                    await message.channel.send({
-                            files: [{ 
-                                  attachment: url, 
-                                  name: 'anal.png' 
-                          }]           
-                   }).then(() => message.channel.stopTyping()); 
-    }).catch(err => console.error(err)); 
-
+exports.run = (client, msg, args) => {
+  if (msg.channel.nsfw === true) {
+    superagent.get('https://nekobot.xyz/api/image')
+    .query({ type: 'anal'})
+    .end((err, response) => {
+      msg.channel.send({ file: response.body.message });
+    });
+  } else {
+    msg.channel.send("This isn't NSFW channel!")
+  }
 };
+
 
  module.exports.help = {
            name: 'anal', 
