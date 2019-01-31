@@ -20,7 +20,8 @@
     "ms": "^2.1.1",
     "quick.db": "^7.0.0-b16",
     "random-puppy": "^1.1.0",
-    "enmap": "^4.6.1"
+    "enmap": "^4.6.1",
+    "better-sqlite-pool": "^0.2.0"
 
 
   }
