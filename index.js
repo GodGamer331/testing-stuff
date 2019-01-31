@@ -5,7 +5,9 @@ const fs = require("fs");
 const moment = require("moment");
 const db = require("quick.db");
 const ms = require("ms");
+const Enmap = require('enmap');
 
+client.warns = new Enmap({name: "warns"});
 //const superagent = require("superagent")
 
 //JSON files
