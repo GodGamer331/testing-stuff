@@ -5,6 +5,7 @@ const fs = require("fs");
 const moment = require("moment");
 const db = require("quick.db");
 const ms = require("ms");
+const client = new Discord.Client();
 const Enmap = require('enmap');
 
 client.warns = new Enmap({name: "warns"});
