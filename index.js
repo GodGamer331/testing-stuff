@@ -156,7 +156,7 @@ bot.on("message", async message => {
 ${videos.map(video2 => `**${++index}-** ${video2.title}`).join('\n')}
 Please enter a number between 1-10 on,a Song select!`)
                 .setColor([226, 50, 41])
-                    message.channel.sendEmbed(embedqueue5);
+                    message.channel.send(embedqueue5);
                     
                     try{
                        var response = await message.channel.awaitMessages(msg2 => msg2.content > 0 && msg2.content < 11, {
@@ -178,7 +178,7 @@ Please enter a number between 1-10 on,a Song select!`)
                     var embedplay7 = new Discord.RichEmbed()
                         .setTitle(`I could find no video!`)
                         .setColor([226, 50, 41])
-                    return message.channel.sendEmbed(embedplay7);
+                    return message.channel.send(embedplay7);
                 }
             }
             //return handleVideo(video, message, voiceChannel);
