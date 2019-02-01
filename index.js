@@ -373,7 +373,7 @@ ${serverQueue.songs.map(song => `**-** ${song.title}`).join('\n')}
             .addField(".mutemusic","Usage: `.mutemusic` Description: To mute Bot.", false)
             .addField(".unmutemusic", "Usage: `.unmutemusic` Description: To unmute Bot.", false)
             .setColor([226, 50, 41])
-            .setThumbnail(client.user.avatarURL)
+            .setThumbnail(message.author.avatarURL)
             return message.channel.sendEmbed(embedhelp);
     }
     return undefined;
@@ -381,7 +381,7 @@ ${serverQueue.songs.map(song => `**-** ${song.title}`).join('\n')}
 
 
 async function handleVideo(video, message, voiceChannel, playlist=false){
-    const serverQueue = queue.get(msg.guild.id);
+    const serverQueue = queue.get(message.guild.id);
     
     const song = {
         id: video.id,
