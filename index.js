@@ -508,5 +508,6 @@ function play(guild, song){
   
  //WUTF IS DAT THING
 });
+});
 bot.login(process.env.token);
 //No one is reading this.. if so then Hi.
