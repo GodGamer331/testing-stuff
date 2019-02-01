@@ -19,8 +19,14 @@ module.exports.run = async (bot, message, args) => {
         message.reply("Usage: !=8ball <question>");
         return;
     };
-
-            if (args[1]) message.channel.send(fortunes[Math.floor(Math.random() * fortunes.length)]);
+            let question = args.join(" ").slice(22);
+            var embed = new Discord.RichEmbed()
+            .setTitle("Magic 8Ball!")
+            .addField("Question:", question)
+            .addField("Answer:", fortunes[Math.floor(Math.random() * fortunes.length)])
+            .setColor("GREEN");
+            message.channel.send(embed)
+            //if (args[1]) message.channel.send(fortunes[Math.floor(Math.random() * fortunes.length)]);
             else message.channel.send("Sorry, Please ask another question.");
 }
 
