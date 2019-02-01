@@ -40,8 +40,8 @@ fs.readdir("./commands/", (err, files) => {
 
 
 bot.on("message", async message => {
-  if(message.author.bot) return;
-  if(message.channel.type === "dm") return;
+  if(message.author.bot) return message.channel.reply("Bot users are not allowed to use commands!");
+  if(message.channel.type === "dm") return message.author.reply("Commands dont work in DM's. Try using it in a server.");
   
   let bal = db.fetch(`money_${message.guild.id}_${message.author.id}`);
   let sender = message.author;
