@@ -160,7 +160,20 @@ module.exports.run = async (bot, message, args) => {
                             {
                                 name: "hentai",
                                 value: "Shows some good hentai pictures!",
-                            }
+                            },
+                            {
+                                name: "pgif",
+                                value: "Shows orn porn gif!"
+                            },
+                            {
+                                name: "anal",
+                                value: "shows anal gif/picture!"
+                                
+                            },
+                            {
+                                name: "lesbian",
+                                value: "Shows lesbian images."
+                            },
                           ],
                   timestamp: new Date(),
                   footer: {
