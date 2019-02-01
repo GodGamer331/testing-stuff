@@ -169,7 +169,7 @@ Please enter a number between 1-10 on,a Song select!`)
                         var embedplay6 = new Discord.RichEmbed()
                             .setTitle(` no or invalid number was entered. Demolition of the song selection!`)
                             .setColor([226, 50, 41])
-                        return message.channel.sendEmbed(embedplay6);
+                        return message.channel.send(embedplay6);
                     }
                     const videoIndex = parseInt(response.first().content);
                     var video = await youtube.getVideoByID(videos[videoIndex - 1].id);
@@ -181,7 +181,7 @@ Please enter a number between 1-10 on,a Song select!`)
                     return message.channel.sendEmbed(embedplay7);
                 }
             }
-            return handleVideo(video, message, voiceChannel);
+            //return handleVideo(video, message, voiceChannel);
         }
     
     } else if(message.content.startsWith(`${PREFIX}skip`)) {
