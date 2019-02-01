@@ -11,7 +11,7 @@ const YouTube = require('simple-youtube-api');
 const ytdl = require('ytdl-core');
 
 const youtube = new YouTube(botconfig.GOOGLE_API_KEY);
-const PREFIX = config.prefix;
+const PREFIX = botconfig.prefix;
 
 //const client = new Discord.Client({disableEveryone: true}); #Wtf is going here..
 client.warns = new Enmap({name: "warns"});
