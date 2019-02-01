@@ -22,7 +22,8 @@ module.exports.run = async (bot, message, args) => {
             let question = args.join(" ").slice(22);
             var embed = new Discord.RichEmbed()
             .setTitle("Magic 8Ball!")
-            .setDescription("My Answer is " + fortunes[Math.floor(Math.random() * fortunes.length)])
+            .setDescription(" Your question: " + question)
+            .setDescription("My Answer is: " + fortunes[Math.floor(Math.random() * fortunes.length)])
            // .addField("Question:", `${question}`)
            // .addField("Answer:", `${fortunes[Math.floor(Math.random() * fortunes.length)]}`)
             .setColor("GREEN");
