@@ -201,7 +201,7 @@ Please enter a number between 1-10 on,a Song select!`)
         var embedskip3 = new Discord.RichEmbed()
             .setTitle(`The Bot has been Skipped!`)
             .setColor([226, 50, 41])
-        return message..channel.sendEmbed(embedskip3);
+        return message.channel.sendEmbed(embedskip3);
     }   
         
      else if (message.content.startsWith(`${PREFIX}stop`)){
@@ -215,7 +215,7 @@ Please enter a number between 1-10 on,a Song select!`)
             var embedstop2 = new Discord.RichEmbed()
                 .setTitle(`There is nothing to stop!`)
                 .setColor([226, 50, 41])
-            return message..channel.sendEmbed(embedstop2);
+            return message.channel.sendEmbed(embedstop2);
         }
         serverQueue.songs = [];
         serverQueue.connection.dispatcher.end('Stop command has been used!');
@@ -262,7 +262,7 @@ Link: ${serverQueue.songs[0].url}
         var embedvolume3 = new Discord.RichEmbed()
                 .setTitle(`The volume is on ${args[1]} set`)
                 .setColor([226, 50, 41])
-        return mmessage.channel.sendEmbed(embedvolume3);
+        return message.channel.sendEmbed(embedvolume3);
         } else{
             var embedvolume4 = new Discord.RichEmbed()
                 .setTitle(`Please enter a number >0 on!`)
