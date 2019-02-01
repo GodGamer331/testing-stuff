@@ -13,7 +13,7 @@ const ytdl = require('ytdl-core');
 const youtube = new YouTube(botconfig.GOOGLE_API_KEY);
 const PREFIX = config.prefix;
 
-//const client = new Discord.Client({disableEveryone: true});
+//const client = new Discord.Client({disableEveryone: true}); #Wtf is going here..
 client.warns = new Enmap({name: "warns"});
 //const superagent = require("superagent")
 
