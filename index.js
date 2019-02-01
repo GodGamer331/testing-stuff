@@ -209,7 +209,7 @@ Please enter a number between 1-10 on,a Song select!`)
            var embedstop1 = new Discord.RichEmbed()
                 .setTitle(`you're not in the voice channel!`)
                 .setColor([226, 50, 41])
-            return message..channel.sendEmbed(embedstop1); 
+            return message.channel.sendEmbed(embedstop1); 
         }
         if(!serverQueue){
             var embedstop2 = new Discord.RichEmbed()
