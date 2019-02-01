@@ -460,54 +460,7 @@ function play(guild, song){
             return serverQueue.textChannel.sendEmbed(embedfunction1);
 }
 	
-  if(message === `${prefix}bal` || cmd === `${prefix}balance`) {
-    
-
-    if (bal === null) bal = 0;
-   // let user = message.author || 
-    message.channel.send("You have balance of " + bal)
-      //  color: 0x42f48c,
-       // fields: [
-          //  {
-           //     name: "Account Owner",
-              //  value: message.author.username,
-               
-         //   },
-          //  {
-           //     name: "Account Balance:",
-            //    value: bal,
-          //  },
-       // ],
-     //   author: {
-     //       icon_url: message.author.avatarURL,
-          //  text: "Bank Vault!"
-      //  }
-            
- //   }})
-      
-    
-
-
-};
-  if (cmd === `${prefix}addmoney` || cmd === `${prefix}am`) {
-    if(!message.member.hasPermission('ADMINISTRATOR')) {
-      message.reply("Sorry You ran out of permissions!")
-    }
-    if(!args[0]) return message.reply("Please specify a amount!")
-    if(isNaN(args[0])) return message.reply("Please specify it in numbers.....")
-    
-    message.channel.send('Succesfully added!')
-    db.add(`money_{message.guild.id}_{message.author.id}`, args[0])
-                            
-  }
- 
- // if (message.content === `${prefix}hentai`) {
-      
-//} 
-	
   
- //WUTF IS DAT THING
-
 
 bot.login(process.env.token);
 //No one is reading this.. if so then Hi.
