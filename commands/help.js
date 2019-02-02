@@ -225,7 +225,7 @@ module.exports.run = async (bot, message, args) => {
                            },
                            {
                                name: "Congrats!",
-                               valur: "Congrats now you have your own giveaway!",
+                               value: "Congrats now you have your own giveaway!",
                            }
                          ],
                      timestamp: new Date(),
