@@ -89,7 +89,18 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
   }
 })
 
-
+bot.on('guildMemberAdd', guildMember => {
+       db.fetch(`autoRole_${guildMember.guild.id}`).then(i => {
+	       if(!i.text || i.text.toLowerCase() === 'none') return;
+	       else {
+                   try{
+                      guildMember.addRole(i.text) <-- guildMember.addRole(guildMember.guild.roles.find('name', i.text))
+		   } catch (e) {
+			   console.log("A guild tried to add autorole but they have invaiod role.")
+		   }
+	       }
+       })
+})
 bot.on("message", async message => {
   if(message.author.bot) return; //message.channel.reply("Bot users are not allowed to use commands!");
   if(message.channel.type === "dm") return message.author.send("Commands dont work in DM's. Try using it in a server.");
