@@ -1,14 +1,25 @@
 const Discord = require("discord.js")
 
-module.exports.run = async (bot, message, args) => {
-  var embed = new Discord.RichEmbed()
-  .setAuthor("Bot made by: JustNela#6666")
-  .setThumbnail(message.author.avatarURL)
-  .addField("Ping!", ":ping_pong: **Pong!**");
-  message.channel.send(embed)
+
+exports.run = async (client, message, args, color) => {
+
+    let start = Date.now(); message.channel.send(message.channel.id, '').then(message => { 
+    let diff = (Date.now() - start); 
+    let API = (client.ping).toFixed(2)
+        
+        let embed = new Discord.RichEmbed()
+        .setTitle(`🔔 Pong!`)
+        .setColor("RANDOM")
+        .addField("📶 Latency", `${diff}ms`, true)
+        .addField("💻 API", `${API}ms`, true)
+        .setFooter("Developer: JustNela#8752")
+        message.edit(embed);
+      
+    });
+
 }
-//lol
-module.exports.help = {
-  name: "ping",
-  aliases: []
+
+exports.help = {
+    name: 'ping',
+    aliases: []
 }
