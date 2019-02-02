@@ -7,7 +7,7 @@ exports.run = async (client, message, args, color) => {
     let diff = (Date.now() - start); 
     let API = (client.ping).toFixed(2)
         
-        let embed = new Discord.RichEmbed()
+        var embed = new Discord.RichEmbed()
         .setTitle(`🔔 Pong!`)
         .setColor("RANDOM")
         .addField("📶 Latency", `${diff}ms`, true)
