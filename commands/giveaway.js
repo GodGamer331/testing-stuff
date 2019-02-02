@@ -46,8 +46,8 @@ module.exports.run = async (bot, message, args) => {
                 collected.first().delete();
                 try {
                   let giveEmbed = new Discord.RichEmbed()
-                  .setAuthor(`Tanki Online`)
-                  .setTitle(title)
+                  .setAuthor(`New giveaway!`)
+                  .setTitle("Prize: "+ title)
                   .setDescription(`Time : ${duration / 60000} Minute`)
                   .setFooter(message.author.username, message.author.avatarURL);
                   message.guild.channels.find('name', room).send(giveEmbed).then(m => {
