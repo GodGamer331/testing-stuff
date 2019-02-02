@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args, tools) => {
    .setColor([212, 244, 2])
    .setDescription(args.join(" ") + "\n👍 Yes/ok \n👎 No")
    .addField("Poll created by:", message.author.username);
-   emssage.channel.send(embed);
+   message.channel.send(embed);
    
    await message.react('👍');
    await message.react('👎');
