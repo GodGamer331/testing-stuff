@@ -5,8 +5,8 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
    var embed = new Discord.RichEmbed()
    .setAuthor("Special Thanks!")
-   .addField("lepax_", "Special thanks to lepax_. If he wouldnt join this project I wouldnt have great commands! ;)")
-   .addField("JustNela", "JutNela is a main developer of this bot! for better support try asking her!")
+   .addField("lepax_", "Special thanks to <@417403958814965771>, If he wouldnt join this project I wouldnt have great commands! ;)")
+   .addField("JustNela", "<@342364288310312970> is a main developer of this bot! for better support try asking her!")
    .setThumbnail(message.author.avatarURL)
    .setColor("GREEN")
    .setFooter("Bot version: v3.3-alpha")
