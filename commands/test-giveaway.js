@@ -71,7 +71,7 @@ module.exports.run = async (bot, message, args) => {
       });
     });
   }
-});
+
 //JEBE MUUU
 
 module.exports.help = {
