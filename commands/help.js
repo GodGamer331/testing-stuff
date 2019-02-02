@@ -95,6 +95,10 @@ module.exports.run = async (bot, message, args) => {
                         {
                             name: "dog",
                             value: "Show a dog picture!",
+                        },
+                        {
+                            name: "giveaway",
+                            value: "Creates giveaway! (!=help giveaway for how to set it up.)",
                         }
                       ],
                   timestamp: new Date(),
@@ -190,7 +194,50 @@ module.exports.run = async (bot, message, args) => {
                     },
               }});
              return;
-            };
+             };
+        
+
+             if(args[0] == "giveaway"){
+                 message.reply("please check your dms for the commands!");
+                 message.author.send({embed: {
+                       color: 1339135,
+                       thumbnail: {
+                           url: (message.author.displayAvatarURL)
+                         },
+                       fields: [
+                           {
+                               name: "Creating giveaway",
+                               value: "Create a giveaway by using !=giveaway command",
+                               
+                           },
+                           {
+                               name: "setting a channel",
+                               value: "Set a channel for giveaways (\nBot: In what channel you want this giveaway? \nMe: <channel-here> \nNote: channel must be without #!",
+                           },
+                           {
+                               name: "Setting time for giveaway",
+                               value: "Set a time by using minutes! (Bot: Lenght of giveaway? \nMe: 1 (1 = 1 minute)",
+                           },
+                           {
+                               name: "Setting prize!",
+                               value: "set a prize by any argument. (Bot: What prize would you like to giveaway? \nMe: <Prize Name>",
+                               
+                           },
+                           {
+                               name: "Congrats!",
+                               valur: "Congrats now you have your own giveaway!",
+                           }
+                         ],
+                     timestamp: new Date(),
+                     author: {
+                         icon_url: message.author.url,
+                         name: "Giveaway help!"
+                     },
+               }});
+              return;
+              };
+                       
+          
     
                 
                  
