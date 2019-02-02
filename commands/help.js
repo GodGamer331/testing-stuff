@@ -19,6 +19,10 @@ module.exports.run = async (bot, message, args) => {
                         value: "!=",
                     },
                     {
+                        name: "special-thanks",
+                        value: "bot will show special thanks.",
+                    },
+                    {
                         name: "!=avatar",
                         value: "Usage: #avatar | #avatar <@mention>",
                     },
