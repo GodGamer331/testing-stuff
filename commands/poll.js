@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) => {
    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Not enought permissions! Permission needed: {MANAGE_MESSAGES}");
    if(!args[0]) return message.channel.send("Usage: ``!=poll <question>``");
    var embed = new Discord.RichEmbed()
-   .setAuhor("New poll!", message.author.avatarURL)
+   .setAuthor("New poll!", message.author.avatarURL)
    .setColor([212, 244, 2])
    .setDescription(args.join(" ") + "\n👍 Yes/ok \n👎 No")
    .addField("Poll created by:", message.author.username);
