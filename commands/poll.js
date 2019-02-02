@@ -10,12 +10,12 @@ module.exports.run = async (bot, message, args, tools) => {
    .setColor([212, 244, 2])
    .setDescription(args.join(" ") + "\n👍 Yes/ok \n👎 No")
    .addField("Poll created by:", message.author.username);
-   let msg = message.channel.send(embed);
+   emssage.channel.send(embed);
    
-   await msg.react('👍');
-   await msg.react('👎');
+   await message.react('👍');
+   await message.react('👎');
    
-   msg.delete({timeout: 1000});
+   message.delete({timeout: 1000});
 }
 
 module.exports.help = {
