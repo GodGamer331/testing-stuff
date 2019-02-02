@@ -5,17 +5,20 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message, args, tools) => {
    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Not enought permissions! Permission needed: {MANAGE_MESSAGES}");
    if(!args[0]) return message.channel.send("Usage: ``!=poll <question>``");
-   var embed = new Discord.RichEmbed()
-   .setAuthor("New poll!", message.author.avatarURL)
-   .setColor([212, 244, 2])
-   .setDescription(args.join(" ") + "\n👍 Yes/ok \n👎 No")
-   .addField("Poll created by:", message.author.username);
-   let message113 = message.channel.send(embed);
-   
-   await message113.react('👍');
-   await message113.react('👎');
-   
-   message113.delete({timeout: 1000});
+   const embed = new Discord.RichEmbed()
+   .setTitle("A Poll Has Been Started!")
+   .setColor("#5599ff")
+   .setDescription(args.join(" "))
+   .setFooter(`Poll Started By: ${message.author.username}`, `${message.author.avatarURL}`)
+
+   message.channel.send({embed})
+   .then(msg => {
+     msg.react('👍')
+     msg.react('👎')
+     msg.react('🤷')
+   })
+   .catch(() => console.error('Emoji failed to react.'));
+
 }
 
 module.exports.help = {
