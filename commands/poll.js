@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args) => {
    let msg = message.channel.send(embed);
    
    await msg.react('👍');
-   await msg.react('👎,);
+   await msg.react('👎');
    
    msg.delete({timeout: 1000});
 }
