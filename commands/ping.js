@@ -3,7 +3,7 @@ const Discord = require("discord.js")
 
 exports.run = async (client, message, args, color) => {
 
-    let start = Date.now(); message.channel.send(message.channel.id, '').then(message => { 
+    let start = Date.now();
     let diff = (Date.now() - start); 
     let API = (client.ping).toFixed(2)
         
@@ -17,7 +17,7 @@ exports.run = async (client, message, args, color) => {
       
     });
 
-}
+
 
 exports.help = {
     name: 'ping',
