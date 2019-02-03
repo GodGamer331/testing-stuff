@@ -132,7 +132,7 @@ module.exports.run = async (bot, message, args) => {
     };
             //let question = args.join(" ").slice(22);
             var embed = new Discord.RichEmbed()
-            .setTitle("Magic 8Ball!")
+            .setTitle("Mass rolling!!")
             .setDescription("You rolled " + fortunes[Math.floor(Math.random() * fortunes.length)] + ", " + fortunes1[Math.floor(Math.random() * fortunes1.length)] + ", " + fortunes2[Math.floor(Math.random() * fortunes2.length)] + ", " + fortunes3[Math.floor(Math.random() * fortunes3.length)] + ", " + fortunes4[Math.floor(Math.random() * fortunes4.length)])
            // .addField("Question:", `${question}`)
            // .addField("Answer:", `${fortunes[Math.floor(Math.random() * fortunes.length)]}`)
