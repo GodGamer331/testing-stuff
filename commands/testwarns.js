@@ -18,7 +18,7 @@ module.exports.run = async (bot, message, args) => {
 
   warns[wUser.id].warns++;
 
-  await fs.writeFile("./warnings.json", JSON.stringify(warns), (err) => {
+  await fs.writeFile("./data/warns.json", JSON.stringify(warns), (err) => {
     if (err) console.log(err)
   });
 
