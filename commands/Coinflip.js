@@ -3,7 +3,7 @@ const PREFIX = "!="
 
 var fortunes = [
     "tails",
-    "head",
+    "head"
 
 ];
 
