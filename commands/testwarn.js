@@ -1,48 +1,61 @@
 const Discord = require("discord.js");
 const fs = require("fs");
 const ms = require("ms");
-let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
+let warns = JSON.parse(fs.readFileSync("./Storage/warnings.json", "utf8"));
 
 module.exports.run = async (bot, message, args) => {
 
-
-if (!message.member.hasPermission("MANAGE_MESSAGES")) return  message.channel.send({embed: { color: 0xFF0000, title: "» Error!", description: "You do not have the permission {MANAGE_MEMBERS}!" } }).catch(console.error);
+  //!warn @daeshan <reason>
+  if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.reply("No can do pal!");
   let wUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
-  if(!wUser) return message.reply({embed: { color: 0xFF0000, title: "» Error!", description: "User could not be found!" } }).catch(console.error);
-  if(wUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send({embed: { color: 0xFF0000, title: "» Error!", description: "Could not warn the user. He/She's way too cool!" } }).catch(console.error);
+  if(!wUser) return message.reply("Couldn't find them yo");
+  if(wUser.hasPermission("MANAGE_MESSAGES")) return message.reply("They waaaay too kewl");
   let reason = args.join(" ").slice(22);
-    if (message.mentions.users.size < 1) return message.reply({embed: { color: 0xFF0000, title: "» Error!", description: "You must mention a user to warn!" } }).catch(console.error);
-      if (reason.length < 1) return message.reply({embed: { color: 0xFF0000, title: "» Error!", description: "You must specify a reason!" } }).catch(console.error);
 
-  // We ensure that the user exists ( makes sure the user exists in the db and returns if they don't)
-   bot.warns.ensure(`${message.guild.id}-${wUser.id}`, { // Ensure
-        user: wUser.id,
-        warns: 0
-      });
-      bot.warns.math(`${message.guild.id}-${wUser.id}`, "+", 1, "warns")  // Right here we will add 1 to the user where warns
+  if(!warns[wUser.id]) warns[wUser.id] = {
+    warns: 0
+  };
+
+  warns[wUser.id].warns++;
+
+  fs.writeFile("./warnings.json", JSON.stringify(warns), (err) => {
+    if (err) console.log(err)
+  });
 
   let warnEmbed = new Discord.RichEmbed()
-  .setColor(0xffff00)
-  .setTitle(`:warning: **Warn**`)
-  .addField("User:", `<@${wUser.id}>`, true)
-  .addField("Warned in:", message.channel, true)
-  .addField("Reason:", reason);
+  .setDescription("Warns")
+  .setAuthor(message.author.username)
+  .setColor("#fc6400")
+  .addField("Warned User", `<@${wUser.id}>`)
+  .addField("Warned In", message.channel)
+  .addField("Number of Warnings", warns[wUser.id].warns)
+  .addField("Reason", reason);
 
-  let warnchannel = message.guild.channels.find(`name`, "logs");
-  if(!warnchannel) return message.channel.send({embed: { color: 0xFF0000, title: "» Error!", description: "Couldn't find a modlogs!" } }).catch(console.error);
+  let warnchannel = message.guild.channels.find(`name`, "incidents");
+  if(!warnchannel) return message.reply("Couldn't find channel");
 
   warnchannel.send(warnEmbed);
-      message.channel.send({embed: { color: 0xFFFFFF, title: "» Success!", description: "User has been warned!"} }).catch(console.log("ERROR HANDLED")).catch(console.error);
-};
 
-exports.conf = {
-  enabled: true,
-  guildOnly: false,
-  aliases: []
-};
+  if(warns[wUser.id].warns == 2){
+    let muterole = message.guild.roles.find(`name`, "muted");
+    if(!muterole) return message.reply("You should create that role dude.");
 
-exports.help = {
-  name: 'twarn',
-  description: 'Warns the user',
-  usage: 'warn <@user> <reason>'
-};
+    let mutetime = "10m";
+    await(wUser.addRole(muterole.id));
+    message.channel.send(`<@${wUser.id}> has been temporarily muted`);
+
+    setTimeout(function(){
+      wUser.removeRole(muterole.id)
+      message.reply(`<@${wUser.id}> has been unmuted.`)
+    }, ms(mutetime))
+  }
+  if(warns[wUser.id].warns == 3){
+    message.guild.member(wUser).ban(reason);
+    message.reply(`<@${wUser.id}> has been banned.`)
+  }
+
+}
+
+module.exports.help = {
+  name: "twarn"
+}
