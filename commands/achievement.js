@@ -17,7 +17,7 @@ exports.run = (client, msg, args) => {
    .then(r=>msg.channel.send("", {files:[{attachment: r.body}]}));
   msg.delete();
 
-});
+};
 exports.help = {
     nam: "achievement",
     aliases: []
