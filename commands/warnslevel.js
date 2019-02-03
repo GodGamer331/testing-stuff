@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) => {
   
   let wUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
   
-  let warns = JSON.parse(fs.readFileSync("./Storage/warnings.json", "utf8"));
+  let warns = JSON.parse(fs.readFileSync("./data/warns.json", "utf8"));
 
   if(!warns[wUser.id]) warns[wUser.id] = {
     warns: 0
