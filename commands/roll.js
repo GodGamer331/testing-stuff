@@ -36,7 +36,7 @@ module.exports.run = async (bot, message, args) => {
     };
             //let question = args.join(" ").slice(22);
             var embed = new Discord.RichEmbed()
-            .setTitle("Magic 8Ball!")
+            .setTitle("rolling between -1 - 20!")
             .setDescription("You rolled " + ftunes[Math.floor(Math.random() * fortunes.length)])
            // .addField("Question:", `${question}`)
            // .addField("Answer:", `${fortunes[Math.floor(Math.random() * fortunes.length)]}`)
