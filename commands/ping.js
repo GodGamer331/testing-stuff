@@ -12,7 +12,8 @@ message.channel.send(E) // Sending the embed
 
   }
 
-module exports.help = {
+
+module.exports.help = {
     name: 'ping',
     aliases: []
 }
