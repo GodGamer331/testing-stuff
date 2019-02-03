@@ -1,3 +1,4 @@
+//[BETA-TESTING COMMAND]
 const Discord = require("discord.js");
 const fs = require("fs");
 const ms = require("ms");
