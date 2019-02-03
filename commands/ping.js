@@ -15,7 +15,7 @@ exports.run = async (client, message, args, color) => {
         .setFooter("Developer: JustNela#8752")
         message.edit(embed);
       
-    });
+   }
 
 
 
