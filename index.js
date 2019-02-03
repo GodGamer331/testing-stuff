@@ -107,7 +107,6 @@ bot.on("message", async message => {
   
   let bal = db.fetch(`money_${message.guild.id}_${message.author.id}`);
   let sender = message.author;
-  let prefix = botconfig.prefix;
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
   let modR = "Moderator";
