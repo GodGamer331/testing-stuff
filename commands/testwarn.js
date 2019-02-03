@@ -18,9 +18,7 @@ module.exports.run = async (bot, message, args) => {
 
   warns[wUser.id].warns++;
 
-  fs.writeFile("./warnings.json", JSON.stringify(warns), (err) => {
-    if (err) console.log(err)
-  });
+  
 
   let warnEmbed = new Discord.RichEmbed()
   .setDescription("Warns")
@@ -53,7 +51,9 @@ module.exports.run = async (bot, message, args) => {
     message.guild.member(wUser).ban(reason);
     message.reply(`<@${wUser.id}> has been banned.`)
   }
-
+  fs.writeFile("./warnings.json", JSON.stringify(warns), (err) => {
+    if (err) console.log(err)
+  });
 }
 
 module.exports.help = {
