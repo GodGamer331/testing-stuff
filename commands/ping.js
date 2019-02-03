@@ -13,7 +13,7 @@ exports.run = async (client, message, args, color) => {
         .setColor("RANDOM")
         .addField("📶 Latency", `${diff}ms`, true)
         .addField("💻 API", `${API}ms`, true)
-        .setFooter("Developer: JustNela#8752")
+        .setFooter("Developer: JustNela#8752");
         message.edit(embed);
       
    }
