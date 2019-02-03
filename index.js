@@ -106,16 +106,17 @@ bot.on("message", async message => {
   if(message.channel.type === "dm") return message.author.send("Commands dont work in DM's. Try using it in a server.");
   
   let bal = db.fetch(`money_${message.guild.id}_${message.author.id}`);
-  let sender = message.author;
+  let sender = message.author;	
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
+  let prefix = botconfig.prefix;
   let modR = "Moderator";
-  let adminR = "Administrator";
-  let args = messageArray.slice(1);
+  let adminR = "Administrator";	
+  let args = messageArray.slice(1);	
   const searchString = args.slice(1).join(' ');
   const url = args[1];
   const serverQueue = queue.get(message.guild.id);
-    
+	
   //let prefix = botconfig.prefix;
   let commandfile = bot.commands.get(cmd.slice(prefix.length));
   if(commandfile) commandfile.run(bot,message,args);
