@@ -1,27 +1,19 @@
-const Discord = require("discord.js")
+const Discord = require("discord.js"); // Defining Discord
 
+module.exports.run = async (client, message, args) => { // Command Handler Module Code
+// const m = await message.channel.send("Ping?");
 
-exports.run = async (client, message, args, color) => {
+let E = new Discord.RichEmbed() // Start of embed
+.setTitle("Pong! :stopwatch:") // Embed Title
+.addField("Latency", `${m.createdTimestamp - message.createdTimestamp}ms`) // Shows Latency
+.addField("API Latency", `${Math.round(client.ping)}ms`) // Shows API Latency
 
+message.channel.send(E) // Sending the embed
 
-    let diff = (Date.now());
-    
-    let API = (client.ping).toFixed(2)
-        
-        var embed = new Discord.RichEmbed()
-        .setTitle(`🔔 Pong!`)
-        .setColor("RANDOM")
-        .addField("📶 Latency", `${diff}ms`, true)
-        .addField("💻 API", `${API}ms`, true)
-        .setTimestamp()
-        .setFooter("Developer: JustNela#8752");
-        message.channel.send(embed);
-      
-   }
+  }
 
-
-
-exports.help = {
+module exports.help = {
     name: 'ping',
     aliases: []
 }
+
