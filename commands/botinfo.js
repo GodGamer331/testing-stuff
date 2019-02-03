@@ -16,7 +16,6 @@ exports.run = (bot, message, args) => {
         const duration = moment.duration(bot.uptime).format(" D [days], H [hrs], m [mins], s [secs]");
         const embedStats = new Discord.RichEmbed()
             .setAuthor(bot.user.username)
-            .setTitle("***BOT Stats***")
             .setColor("RANDOM")
             .addField("• Mem Usage", `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} / ${(os.totalmem() / 1024 / 1024).toFixed(2)} MB`, true)
             .addField("• Uptime ", `${duration}`, true)
