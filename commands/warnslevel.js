@@ -1,26 +1,30 @@
 //[BETA-TESTING COMMAND]
+const warns = require("../Storage/warnings.json");
 const Discord = require("discord.js");
-const fs = require("fs");
-const ms = require("ms");
-let warns = JSON.parse(fs.readFileSync("./Storage/warnings.json", "utf8"));
-
-module.exports.run = async (bot, message, args) => {
-  
-  let wUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]) || message.author
-  
-  if(!warns[wUser.id]) warns[wUser.id] = {
-    warns: 0
-  };
-  
-  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("You can't do that.");
- // let wUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]) || message.author
-  if(!wUser) return message.reply("Couldn't find them yo");
-  let warnlevel = warns[wUser.id].warns;
-
-  message.reply(`<@${wUser.id}> has ${warnlevel} warnings.`);
-
+const fs = require("fs")
+exports.run = async function (bot, message, args) {
+  let list = Object.keys(warns);
+  let found = '';
+  let foundCounter = 0;
+  let warnCase;
+  //looking for the case id
+  for (let i = 0; i < list.length; i++) {
+          foundCounter++;
+          found += `Case ID: ${(warns[list[i]].warning.caseid)}\nUsername: ${warns[list[i]].user.name}#${warns[list[i]].user.discrim}\nAdmin: ${warns[list[i]].admin.name}#${warns[list[i]].admin.discrim}\nServer: ${warns[list[i]].server.name}\nReason: ${warns[list[i]].reason}\n\n`;
+  }
+  if (foundCounter == 0) return message.channel.send("No warnings found")
+  message.channel.send("Found " + foundCounter + " warning(s).\n```" + found + "```");
 }
 
-module.exports.help = {
-  name: "wlevel"
+exports.help = {
+  name: "wlevel",
+  description: "Shows the total issued warnings.",
+  usage: "twarnings"
+}
+
+exports.config = {
+  enabled: true,
+  guildOnly: true,
+  permlevel: 20,
+  aliases: []
 }
