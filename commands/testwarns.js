@@ -15,7 +15,7 @@ module.exports.run = async (bot, message, args) => {
   if(!warns[wUser.id]) warns[wUser.id] = {
     warns: 0
   };
-
+//pls Funguj 
   warns[wUser.id].warns++;
 
   await fs.writeFile("./data/warns.json", JSON.stringify(warns), (err) => {
