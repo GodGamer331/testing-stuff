@@ -9,16 +9,21 @@ exports.run = (client, msg, args) => {
   if(args.join(" ").toLowerCase().includes("burn")) rnd = 38;
   if(args.join(" ").toLowerCase().includes("cookie")) rnd = 21;
   if(args.join(" ").toLowerCase().includes("cake")) rnd = 10;
-  if(args.join(" ").toLowerCase().includes("diamond")) rnd = 29;
 
-  if(title.length > 10 || contents.length > 10) return msg.edit("Max Length: 10 Characters. Soz.").then(msg.delete.bind(msg), 2000);
+  if(title.length > 22 || contents.length > 22) return msg.edit("Max Length: 22 Characters. Soz.").then(msg.delete.bind(msg), 2000);
   const url = `https://www.minecraftskinstealer.com/achievement/a.php?i=${rnd}&h=${encodeURIComponent(title)}&t=${encodeURIComponent(contents)}`;
   snekfetch.get(url)
    .then(r=>msg.channel.send("", {files:[{attachment: r.body}]}));
   msg.delete();
 
 };
+
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+};
+
 exports.help = {
-    nam: "achievement",
-    aliases: []
-}
+  name: 'achievement',
+  aliases: ["mc"]
+};
