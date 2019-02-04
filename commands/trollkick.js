@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
    .setDescription("Lol you really thinked I misspelled that? No I didnt :D \n You cant kick anyone!");
    message.chsnnel.send(embed)
    
-}
+}//lol
 
 module.exports.help = {
     name: "kik",
