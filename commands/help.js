@@ -60,7 +60,7 @@ module.exports.run = async (bot, message, args) => {
                   timestamp: new Date(),
                   footer: {
                     icon_url: bot.user.displayAvatarURL ,
-                    text: "GodBot™ | Made by JustNela#8752",
+                    text: "GodBot™ | Made by JustNela#8752 | v3.4-Alpha",
                   },
                   author: {
                       icon_url: message.guild.iconURL,
@@ -104,7 +104,7 @@ module.exports.run = async (bot, message, args) => {
                   timestamp: new Date(),
                   footer: {
                     icon_url: bot.user.displayAvatarURL ,
-                    text: "GodBot™ | Made by JustNela#8752 | page 2",
+                    text: "GodBot™ | Made by JustNela#8752 | page 2 | v3.4-Alpha",
                   },
                   author: {
                       icon_url: message.guild.iconURL,
@@ -136,7 +136,7 @@ module.exports.run = async (bot, message, args) => {
                   timestamp: new Date(),
                   footer: {
                     icon_url: bot.user.displayAvatarURL ,
-                    text: "GodBot™ | Made by JustNela#8752 | page 2",
+                    text: "GodBot™ | Made by JustNela#8752 | page ??? | devhelp Bot version: v3.4-Alpha",
                   },
                   author: {
                       icon_url: message.guild.iconURL,
@@ -186,7 +186,7 @@ module.exports.run = async (bot, message, args) => {
                   timestamp: new Date(),
                   footer: {
                     icon_url: bot.user.displayAvatarURL ,
-                    text: "GodBot™ | Made by JustNela#8752 | page 2",
+                    text: "GodBot™ | Made by JustNela#8752 | cstrgory nsfw | v3.4-Alpha",
                   },
                   author: {
                       icon_url: message.guild.iconURL,
