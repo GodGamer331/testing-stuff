@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
    .setAuthor("You got trolled!")
    .setColor("RED")
    .setDescription("Lol you really thinked I misspelled that? No I didnt :D \n You cant kick anyone!");
-   message.chsnnel.send(embed)
+    message.chsnnel.send(embed)
 }
 
 module.exports.help = {
