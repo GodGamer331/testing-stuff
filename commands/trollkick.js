@@ -12,7 +12,7 @@ bot.on("message", async message => {
    .setDescription("Lol you really thinked I misspelled that? No I didnt :D \n You cant kick anyone!");
    message.chsnnel.send(embed)
    }
-}
+});
 
 //module.exports.help = {
     //name: "kik",
