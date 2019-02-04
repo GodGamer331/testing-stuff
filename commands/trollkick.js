@@ -5,7 +5,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
 //bot.on("message", async message => {
-   if (message.content === '!=test' || message.content === '!=t'){
+   //if (message.content === '!=test' || message.content === '!=t'){
    var embed = new Discord.RichEmbed()
    .setAuthor("You got trolled!")
    .setColor("RED")
