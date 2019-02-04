@@ -161,7 +161,7 @@ bot.on("message", async message => {
 
     let user = message.mentions.users.first() || message.author
     message.channel.send('Successfully added ' + args[0] + ' to ' + user)
-    db.add(money_${user.id}, args[0])
+    db.add(`money_${user.id}`, args[0])
 
   }
 });
