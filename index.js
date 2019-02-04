@@ -105,8 +105,8 @@ bot.on("message", async message => {
   if(message.author.bot) return; //message.channel.reply("Bot users are not allowed to use commands!");
   if(message.channel.type === "dm") return message.author.send("Commands dont work in DM's. Try using it in a server.");
   
-  let bal = db.fetch(`money_${message.guild.id}_${message.author.id}`);
-  let sender = message.author;	
+  let user = message.mentions.members.first() || message.author
+  let bal = await db.fetch(`money_${user.id}`)
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
   let prefix = botconfig.prefix;
