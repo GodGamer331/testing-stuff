@@ -11,6 +11,7 @@ module.exports.run = async (bot, message, args) => {
   if(!wUser) return message.reply("Couldn't find them yo");
  // if(wUser.hasPermission("MANAGE_MESSAGES")) return message.reply("They waaaay too kewl");
   let reason = args.join(" ").slice(22);
+  if(!reason) return message.reply("Specify a reason.............. ||noob..||")
 
   if(!warns[wUser.id]) warns[wUser.id] = {
     warns: 0
@@ -57,5 +58,5 @@ module.exports.run = async (bot, message, args) => {
 }
 
 module.exports.help = {
-  name: "twarn"
+  name: "warn"
 }
