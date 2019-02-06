@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
       if(args[0] == "Gfidts6653HsixVs_jeiHeb"){
         message.reply("please check your dms");
             message.author.send({embed: {
-                  color: RANDOM,
+                  color: 0xf4a742,
                   thumbnail: {
                       url: (message.author.displayAvatarURL)
                     },
