@@ -30,6 +30,7 @@
     "gcc": "1.0.2",
     "ffmpeg": "0.0.4",
     "ffmpeg-binaries": "3.2.2-3",
+    "mysql": "^2.15.0",
     "request": "2.81.0"
 
   }
