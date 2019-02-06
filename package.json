@@ -31,6 +31,7 @@
     "ffmpeg": "0.0.4",
     "ffmpeg-binaries": "3.2.2-3",
     "mysql": "^2.15.0",
+    "querystring": "^0.2.0",
     "request": "2.81.0"
 
   }
