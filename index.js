@@ -41,7 +41,7 @@ fs.readdir("./commands/", (err, files) => {
     console.log(`${f} loaded!`);
     bot.commands.set(props.help.name, props);
   });
-
+the
 });
 
 const queue = new Map();
@@ -163,6 +163,13 @@ bot.on("message", async message => {
     message.channel.send('Successfully added ' + args[0] + ' to ' + user)
     db.add(`money_${user.id}`, args[0])
 
+  }
+  if (cmd === `${prefix}codes` || cmd === `${prefix}c`) {
+     var embed = new Discord.RichEmbed()
+     .addField("No codes Found!", "We are currently preparing this!")
+     .setColor([224, 135, 40])
+     .setAuthor("Preparing!", bot.user.avatarURL);
+     message.channel.send(embed)
   }
 });
         
