@@ -30,5 +30,5 @@ exports.conf = {
 exports.help = {
 	name: `prefix`,
 	description: `Change the basic command prefix.`,
-	usage: `${client.settings.prefix}prefix <new prefix>`
+//usage: `${client.settings.prefix}prefix <new prefix>`
 };
