@@ -102,8 +102,10 @@ bot.on('guildMemberAdd', guildMember => {
        })
 })
 bot.on("message", async message => {
-  if(message.author.bot) return; //message.channel.reply("Bot users are not allowed to use commands!");
-  if(message.channel.type === "dm") return message.author.send("Commands dont work in DM's. Try using it in a server.");
+  
+ if(message.author.bot) return;	//message.channel.reply("Bot users are not allowed to use commands!");
+ if(!message.startsWith(prefix)) return undefined;
+ if(message.channel.type === "dm") return message.author.send("Commands dont work in DM's. Try using it in a server.");
   
   let user = message.mentions.members.first() || message.author
   let bal = await db.fetch(`money_${user.id}`)
